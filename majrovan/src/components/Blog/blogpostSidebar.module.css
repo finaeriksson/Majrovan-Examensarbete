@@ -1,0 +1,45 @@
+
+/* blogSidebar.module.css */
+.blogSidebar {
+    background-color: #fafafa;
+    padding: 1rem;
+    border-left: 1px solid #ccc;
+  }
+  
+  .archiveGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .archiveList {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .archiveList li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .archiveList li:hover {
+    color: #0070f3;
+  }
+  
+  .tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .tagItem {
+    background-color: #eaeaea;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .tagItem:hover {
+    background-color: #ccc;
+  }

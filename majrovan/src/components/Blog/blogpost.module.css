@@ -1,0 +1,50 @@
+
+.blogContainer {
+    display: flex;
+    gap: 2rem;
+    border: 1px solid red;
+}
+
+.blogpost {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    clear: both;
+    margin: 1rem 0;
+    margin: 0 auto;
+}
+
+.blogHeading {
+    display: flex;
+    flex-direction: column;
+}
+
+.blogItem {
+    display: flex;
+    
+}
+
+.tag {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.carousel {
+    display: flex;
+    max-width: 60%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.blogtext {
+    display: flex;
+    border: 1px solid black;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.blogSidebar {
+display: flex;
+
+}
