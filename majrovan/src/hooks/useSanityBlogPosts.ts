@@ -1,6 +1,4 @@
 
-
-// src/hooks/useSanityBlogPosts.ts
 import { useEffect, useState } from 'react';
 import sanityClient from '../../Studio/studio-majrovan/lib/sanity';
 
