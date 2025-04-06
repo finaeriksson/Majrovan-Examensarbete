@@ -7,8 +7,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Layout children={undefined} >
-      </Layout>
+      <Layout />
     </>
   )
 }

@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import sanityClient from '../../Studio/studio-majrovan/lib/sanity';
+import { PortableTextBlock } from '@portabletext/react';
 
 export interface BlogPost {
   _id: string;
@@ -15,7 +16,7 @@ export interface BlogPost {
   tags?: string[];  //? gör fältet valfritt
   title: string;
   slug: { current: string };
-  body: any;
+  body: PortableTextBlock[];
   publishedAt: string;
 }
 

@@ -6,17 +6,15 @@ import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../../Studio/studio-majrovan/lib/sanity';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import styles from './blogpost.module.css'
-import useSanityLatestPosts from '../../hooks/useSanityLatestPosts';
 import useSanityBlogPosts from '../../hooks/useSanityBlogPosts';
-
 import BlogSidebar from './BlogpostSidebar';
 import { useState } from 'react';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 // Bygg en URL-builder för Sanity-bilder
 const builder = imageUrlBuilder(sanityClient);
-function urlFor(source: any) {
+function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }
 
@@ -24,6 +22,7 @@ const Blogpost: NextPage = () => {
   // const latestPosts = useSanityLatestPosts();  //hämtar alla inlägg
   // const posts = useSanityLatestPosts();  
   const allPosts = useSanityBlogPosts();//hämtar alla inlägg
+  // console.log("Blogpost posts:", allPosts);
 
 
   //state för filter
