@@ -1,8 +1,9 @@
 
-import Blogpost from "./Blog/Blogpost";
-import CardGallery from "./gallery/CardGallery";
+import Blogpost from "../components/Blog/Blogpost";
+// import CardGallery from "../components/gallery/CardGallery";
 import styles from "./main.module.css";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
+import { NavLink } from "react-router-dom";
 
 
 const Main: React.FC = () => {
@@ -16,8 +17,9 @@ const Main: React.FC = () => {
                 </div>
                 <div className={styles.mainContainer}>
 
+                <NavLink to="/gallery">Galleri</NavLink>
+                
                     <Blogpost></Blogpost>
-                    <CardGallery></CardGallery>
                 </div>
 
 

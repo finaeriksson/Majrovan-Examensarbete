@@ -3,21 +3,20 @@
 import styles from './layout.module.css'
 import Header from './Header';
 import Footer from './Footer';
-import Main from './Main';
 
 
-const Layout: React.FC = () => {
+const Layout: React.FC<{children:React.ReactNode}> = ({children}) => {
 
 
   return (
     <>
       <div className={styles.layout}>
-        <Header></Header>
+        <Header />
         
         <main className={styles.content} >
-          <Main></Main>
+          {children}
         </main>
-        <Footer></Footer>
+        <Footer />
       </div>
     </>
   )

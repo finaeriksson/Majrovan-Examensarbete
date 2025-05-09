@@ -3,6 +3,7 @@ import sanityClient from '../../lib/sanityClient';
 import styles from './cardGallery.module.css';
 import useSanityCards from '../../hooks/useSanityCards'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { useCart } from '../../contexts/CartContext';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
@@ -11,7 +12,7 @@ function urlFor(source: SanityImageSource) {
 
 const CardGallery: React.FC = () => {
   const cards = useSanityCards();
-
+  const { dispatch } = useCart()
 
   return (
     <>
@@ -26,7 +27,9 @@ const CardGallery: React.FC = () => {
             <h3>{card.title}</h3>
             <p>{card.price} kr</p>
 
-            <button className={styles.buyButton}> Köp </button>
+            <button 
+              className={styles.buyButton}
+              onClick={() => dispatch({ type: "ADD", card})}> Köp </button>
           </div>
         ))}
 

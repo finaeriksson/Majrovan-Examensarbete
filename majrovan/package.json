@@ -20,6 +20,7 @@
     "react-big-calendar": "^1.17.1",
     "react-dom": "^18.3.1",
     "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^7.5.3",
     "tui-calendar": "^1.15.3",
     "tui-date-picker": "^4.3.3",
     "tui-time-picker": "^2.1.6"
