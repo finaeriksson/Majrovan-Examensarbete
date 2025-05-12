@@ -24,13 +24,20 @@
   }
   
   .buyButton {
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+
+      background: #4eacea;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .buyButton:active {
+      transform: scale(0.95);
+      background: #3a7b96;
+    }
   
   .buyButton:hover {
     background-color: #005bb5;

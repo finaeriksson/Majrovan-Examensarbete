@@ -1,6 +1,8 @@
 // import { useState } from "react"
+import { useState } from "react"
 import { useCart } from "../contexts/CartContext"
 import styles from "./checkoutPage.module.css"
+import { NavLink } from "react-router-dom"
 
 
 
@@ -10,7 +12,8 @@ const CheckoutPage: React.FC = () => {
 
     const { cart, dispatch } = useCart()
     // const [name, setName] = useState("")
-    // const [email, setEmail] = useState("")
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [email, setEmail] = useState("")
     // const [address, setAddress] = useState("")
 
     // const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +21,14 @@ const CheckoutPage: React.FC = () => {
     // }
 
     if (cart.length === 0) {
-        return <p>Din korg är tom. Välj minst en produkt</p>
+        return (
+            <div className={styles.emptyCart}>
+              <p>Din korg är tom. Välj minst en produkt.</p>
+              <NavLink to="/gallery" className={styles.backButton}>
+                ← Tillbaka till galleri
+              </NavLink>
+            </div>
+          )
     }
 
     // Bygg order-strängen som skickas i mailet
@@ -30,14 +40,24 @@ const CheckoutPage: React.FC = () => {
     return (
         <>
             <div className={styles.container}>
-                <h1>Slutför din beställning</h1>
-                <ul>
+            <NavLink to="/gallery">Tillbaka till galleri ({cart.length})</NavLink>
+                <h3>Slutför din beställning</h3>
+
+
+                <ul className={styles.cartList}>
+                    <h4>Kundvagn</h4>
                     {cart.map(c => (
-                        <li key={c._id}>
-                            {c.title} - {c.price} kr{""}
-                            <button onClick={() => dispatch({ type: "REMOVE", id: c._id })}>
-                                Ta bort
-                            </button>
+                        <li key={c._id} className={styles.cartItem}>
+                            <div className={styles.itemInfo}>
+                                {c.title} - {c.price} kr{""}
+                            </div>
+                            <div className={styles.buttonRemove}>
+                                <button onClick={() => dispatch({ type: "REMOVE", id: c._id })}>
+                                    Ta bort
+                                </button>
+                            </div>
+
+
                         </li>
                     ))}
                 </ul>
@@ -49,39 +69,8 @@ const CheckoutPage: React.FC = () => {
 
                     {/* Inaktivera Formsubmit’s captcha-text */}
                     <input type="hidden" name="_captcha" value="false" />
-
-                    {/* (Valfritt) Efter inskick: skicka till tack-sida */}
-                    {/* <input type="hidden" name="_next" value="https://dinsajt.se/tack" /> */}
-
-                    <label >
-                        Namn
-                        <input
-                            name="name"
-                            type="text"
-                            placeholder="Ditt namn"
-                            required
-                        />
-                    </label>
-                    <label >
-                        E-post
-                        <input
-                            name="email"
-                            type="email"
-                            placeholder="din@epost.se"
-                            required
-                        />
-                    </label>
-                    <label >
-                        Adress
-                        <textarea
-                            name="address"
-                            placeholder="Din leveransadress"
-                            required
-                        />
-                    </label>
-
                     {/* För att Formsubmit ska sätta reply-to i mailet */}
-                    {/* <input type="hidden" name="_replyto" value={email} /> */}
+                    <input type="hidden" name="_replyto" value={email} />
 
                     {/* Visa fälten i tabell (valfritt) */}
                     <input type="hidden" name="_template" value="table" />
@@ -89,9 +78,95 @@ const CheckoutPage: React.FC = () => {
                     {/* Skicka med hela kundkorgen som en dold fält */}
                     <input name="order" type="hidden" value={orderText} />
 
+                    {/* Skickar till egen tack sida istället för formsubmits tack sida */}
                     <input type="hidden" name="_next" value={`${window.location.origin}/thankYou`} />
 
-                    <button type="submit">Skicka beställning</button>
+                    <div className={styles.inputForm}>
+                        <label >
+                            Förnamn
+                            <input
+                                name="name"
+                                type="text"
+                                placeholder="Förnamn"
+                                required
+                            />
+                        </label>
+                    </div>
+
+
+                    <div className={styles.inputForm}>
+                        <label >
+                            Efternamn
+                            <input
+                                name="lastname"
+                                type="text"
+                                placeholder="Efternamn"
+                                required
+                            />
+                        </label>
+                    </div>
+
+                    <div className={styles.inputForm}>
+                        <label >
+                            E-post
+                            <input
+                                name="email"
+                                type="email"
+                                placeholder="din@epost.se"
+                                required
+                            />
+                        </label>
+                    </div>
+
+                    <div className={styles.inputForm}>
+                        <label >
+                            Telefonnummer
+                            <input
+                                name="phone"
+                                type="phone"
+                                placeholder="0700-12 34 56"
+                                required
+                            />
+                        </label>
+                    </div>
+
+                    <div className={styles.inputForm}>
+                        <label >
+                            Gatuadress
+                            <textarea
+                                name="address"
+                                placeholder="Din leveransadress"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.inputForm}>
+                        <label >
+                            Postnummer
+                            <input
+                                name="postnumber"
+                                placeholder="Postnummer"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.inputForm}>
+                        <label >
+                            Stad
+                            <input
+                                name="city"
+                                placeholder="Din stad"
+                                required
+                            />
+                        </label>
+                    </div>
+
+
+
+                    <div className={styles.submitButton}>
+                        <button type="submit">Skicka beställning</button>
+                    </div>
+
                 </form>
             </div>
         </>

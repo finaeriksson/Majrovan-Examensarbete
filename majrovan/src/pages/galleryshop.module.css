@@ -1,0 +1,21 @@
+
+
+.checkoutButton {
+    padding: 0.5rem 1rem;
+    background: #4eacea;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.checkoutButton:hover {
+    background: #4291b4;
+  }
+
+.home {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background: #4eacea;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}

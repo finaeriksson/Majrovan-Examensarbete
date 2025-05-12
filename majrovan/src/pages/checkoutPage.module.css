@@ -1,1 +1,106 @@
 
+
+h4 {
+    margin-left: 15px;
+}
+.cartList {
+    list-style: none;             /* ta bort standardpunkter */
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;          /* ljus bakgrund */
+    border: 1px solid #ddd;       /* tunn ljusgrå kant */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 1.5rem auto;          /* centrerad och med mellanrum */
+  }
+  
+  /* varje rad i kundvagnen */
+  .cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee; /* ljus skiljelinje */
+  }
+  
+  /* ta bort skiljelinje på sista elementet */
+  .cartItem:last-child {
+    border-bottom: none;
+  }
+  
+  /* title + pris i en grupp (vänster) */
+  .cartItem .itemInfo {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* “Ta bort”-knappen till höger */
+  .cartItem button {
+    background: #4eacea;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .cartItem button:hover {
+    background: #a1c8ea;
+  }
+
+.form {
+    /* display: flex;
+    flex-direction: column; */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.inputForm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inputForm label {
+    flex: 0 0 12px;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+.inputForm input,
+.inputForm textarea {
+    flex:  1 1 auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputForm:last-child {
+    justify-content: flex-end;
+}
+
+.submitButton button {
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.emptyCart {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .backButton {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #4eacea;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .backButton:hover {
+    background: #4291b4;
+  }
