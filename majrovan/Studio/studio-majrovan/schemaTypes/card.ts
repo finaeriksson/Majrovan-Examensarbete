@@ -2,7 +2,7 @@
 export default {
     name: 'card',
     type: 'document',
-    title: 'Kort',
+    title: 'Produkter',
     fields: [
         {
             name: 'title',
