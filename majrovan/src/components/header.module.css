@@ -42,5 +42,38 @@ h3 {
     width: 40px;
     height: auto;
     cursor: pointer;
-    
 }
+
+.stickyMenu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: #af83aa;
+    
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .stickyMenu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+  }
+  .stickyMenu a:hover {
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  .stickyMenu .inactiveLink {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .stickyMenu .activeLink {
+    color: #f5f5f5;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+  }

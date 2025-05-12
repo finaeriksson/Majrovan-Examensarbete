@@ -7,6 +7,7 @@ import GalleryShop from './pages/GalleryShop'
 import { CartProvider } from './contexts/CartContext';
 import CheckoutPage from './pages/CheckoutPage';
 import ThankYou from './pages/ThankYou';
+import BlogPage from './pages/Blogpage';
 
 const App: React.FC = () => {
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path='/gallery' element={<GalleryShop />} />
             <Route path='/checkout' element={<CheckoutPage />} />
             <Route path='/thankYou' element={<ThankYou />}/>
+            <Route path='/blog' element={<BlogPage />} />
           </Routes>
         </Layout>
       </CartProvider>
