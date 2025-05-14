@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom"
-import CardGallery from "../components/gallery/CardGallery"
+import CardGallery from "../components/galleryShop/CardGallery"
 import styles from "./galleryshop.module.css"
 import { useCart } from "../contexts/CartContext"
 

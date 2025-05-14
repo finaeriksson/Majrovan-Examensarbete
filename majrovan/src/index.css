@@ -7,3 +7,47 @@ body,
     padding: 0;
     overflow-x: hidden;
 }
+
+
+/* globala styles för glleri lightboxen */
+:root {
+    --yarl-overlay-bg: rgba(0, 0, 0, 0.9);
+    --yarl-slide-max-width: 90vw;
+    --yarl-slide-max-height: 90vh;
+  }
+  
+  /* Om du vill vara extra bullet-proof */
+  .yarl__container {
+    background-color: var(--yarl-overlay-bg) !important;
+  }
+  .yarl__slide_image {
+    /* låt bilden verkligen fylla wrappern */
+    width: 30% !important;
+    height: auto !important;
+    max-width: var(--yarl-slide-max-width) !important;
+    max-height: var(--yarl-slide-max-height) !important;
+  }
+  
+
+
+/* Simplebar till lightbox - spåret */
+.galleryWrapper .simplebar-track.simplebar-vertical{
+  width: 8px !important;          /* !important slår inline-style */
+  background: transparent;
+}
+
+/* tummen */
+.galleryWrapper .simplebar-scrollbar:before{
+  content: "";
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: #b996bc !important; /* grundfärg */
+  transition: background .2s;
+}
+
+/* hover – valfritt */
+.galleryWrapper .simplebar-track:hover
+.simplebar-scrollbar:before{
+  background: #916f9a !important; /* mörkare vid hover */
+} 

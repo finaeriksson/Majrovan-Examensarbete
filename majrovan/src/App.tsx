@@ -1,5 +1,7 @@
 
-
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "./index.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout';
 import Main from './pages/Main'
@@ -8,6 +10,8 @@ import { CartProvider } from './contexts/CartContext';
 import CheckoutPage from './pages/CheckoutPage';
 import ThankYou from './pages/ThankYou';
 import BlogPage from './pages/Blogpage';
+import MajrovanCalendar from "./components/Calendar/MajrovanCalendar";
+
 
 const App: React.FC = () => {
 
@@ -23,6 +27,7 @@ const App: React.FC = () => {
             <Route path='/checkout' element={<CheckoutPage />} />
             <Route path='/thankYou' element={<ThankYou />}/>
             <Route path='/blog' element={<BlogPage />} />
+            <Route path='/calendar' element={<MajrovanCalendar />} />
           </Routes>
         </Layout>
       </CartProvider>

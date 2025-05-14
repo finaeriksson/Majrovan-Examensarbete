@@ -1,0 +1,79 @@
+
+
+.masonry {
+    column-count: 4;          /* ändra efter smak */
+  column-gap: 1rem;
+ column-count: 230px;   
+}
+
+/* @media (max-width: 768px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .masonry {
+        column-count: 3;
+    }
+} */
+  /* tablet */
+  @media (max-width:1200px){
+    .masonry { 
+    column-count:3; 
+  }}
+  /* mobil liggande */
+   @media (max-width:900px){  
+    .masonry { 
+    column-count:2; 
+  } }
+    /* mobil stående */
+
+     @media (max-width:500px){
+    .masonry { 
+    column-count:1; 
+  } }
+
+.item {
+    position: relative;
+    display: inline-block;
+    /* width: 100%; */
+    margin-bottom: 1ewm;
+    cursor: pointer;
+    overflow: hidden;
+    /* break-inside: avoid; */
+}
+
+.image {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon {
+    font-size: 2rem;
+    color: white;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item:hover .overlay {
+    opacity: 1;
+}

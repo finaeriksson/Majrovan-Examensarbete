@@ -30,7 +30,9 @@ const Header: React.FC = () => {
                 <NavLink to="/blog" className={({ isActive }) => isActive ? styles.activeLink : styles.inactiveLink}>
                     Blogg
                 </NavLink>
-
+                <NavLink to="/calendar" className={({ isActive }) => isActive ? styles.activeLink : styles.inactiveLink}>
+                    Kalender
+                </NavLink>
             </nav>
         </>
     )

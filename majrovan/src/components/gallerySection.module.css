@@ -1,0 +1,20 @@
+
+
+.container {
+    /* max-height: 50vh;      
+    overflow-y: auto;      
+    padding-right: 1rem;   
+    margin-bottom: 2rem;
+    
+    width: 100%;
+    scroll-behavior:smooth;
+    scrollbar-width:thin;
+    scrollbar-color:#b996bc transparent; */
+      padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f4f0f0;
+  border: 1px solid #ddd; 
+    border-radius: 4px;
+  }
+  
