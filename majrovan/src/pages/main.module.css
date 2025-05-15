@@ -9,7 +9,7 @@
 
 .pageContainer {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 2rem,;
 }
 
@@ -20,6 +20,25 @@
     min-width: 0;
 }
 .aside {
-    /* width: 25%; */
-    flex: 0 0 25%;
+    flex: 0 0 280px;
+    min-width: 220px;
+}
+
+@media (max-width:1200px) {
+  .aside { flex: 0 0 240px; }
+}
+
+@media (max-width:900px)  {
+  .aside { flex: 0 0 190px; }
+}
+
+@media (max-width:600px)  {
+  .pageContainer {            /* kolumn-layout i stället för rad */
+    flex-direction: column;
+  }
+
+  .aside {
+    width: 100%;
+    order: -1;                /* visas över galleriet             */
+  }
 }

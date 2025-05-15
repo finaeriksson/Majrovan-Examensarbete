@@ -3,17 +3,21 @@
 import styles from "./main.module.css";
 import Sidebar from "../components/Sidebar";
 import GallerySection from "../components/GallerySection";
-
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const Main: React.FC = () => {
 
+    const isDesktop = useMediaQuery('(min-width: 769px)')
     
    return (
 
         <div className={styles.pageContainer}>
-            <div className={styles.aside}>
+            {isDesktop && (
+                <aside className={styles.aside}>
                 <Sidebar></Sidebar>
-            </div>
+            </aside>
+            )}
+            
             <div className={styles.mainContainer}>
                 <GallerySection></GallerySection>
             </div>

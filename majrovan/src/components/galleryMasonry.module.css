@@ -1,22 +1,11 @@
 
 
 .masonry {
-    column-count: 4;          /* ändra efter smak */
+    column-count: 4;      
   column-gap: 1rem;
  column-count: 230px;   
 }
 
-/* @media (max-width: 768px) {
-    .masonry {
-        column-count: 1;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-    .masonry {
-        column-count: 3;
-    }
-} */
   /* tablet */
   @media (max-width:1200px){
     .masonry { 
@@ -38,7 +27,7 @@
     position: relative;
     display: inline-block;
     /* width: 100%; */
-    margin-bottom: 1ewm;
+    margin-bottom: 1rem;
     cursor: pointer;
     overflow: hidden;
     /* break-inside: avoid; */

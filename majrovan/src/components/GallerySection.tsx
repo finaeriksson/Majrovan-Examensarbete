@@ -25,39 +25,38 @@ const GalleryShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
-    
-      <div className={styles.container}>
-        
-        <SimpleBar                     // ⬅️ ersätter div.galleryWrapper
+
+    <div className={styles.container}>
+
+      <SimpleBar
         className="galleryWrapper"
         autoHide={false}
-        style={{ height: '75vh' }} // eller använd CSS-klass
+        style={{ maxHeight: '75vh' }}
       >
         <h3 className={styles.heading}>Galleri</h3>
-          <GalleryMasonry
-            images={images}
-            onImageClick={(idx) => {
-              setCurrentIndex(idx)
-              setIsOpen(true)
-            }}
-          /></SimpleBar>
-        {/* </div> */}
-        
-        {/* Masonry‐grid med hover‐effekter */}
+        <GalleryMasonry
+          images={images}
+          onImageClick={(idx) => {
+            setCurrentIndex(idx)
+            setIsOpen(true)
+          }}
+        /></SimpleBar>
 
 
-        {/* Lightbox när man klickar på en bild */}
-        <Lightbox
-          open={isOpen}
-          close={() => setIsOpen(false)}
-          index={currentIndex}
-          slides={images.map((src) => ({ src }))}
-          plugins={[Thumbnails]}
-          // (valfritt) tryck utanför bilden stänger
-          controller={{ closeOnBackdropClick: true }}
-        />
-      </div>
-    
+
+
+      {/* Lightbox när man klickar på en bild */}
+      <Lightbox
+        open={isOpen}
+        close={() => setIsOpen(false)}
+        index={currentIndex}
+        slides={images.map((src) => ({ src }))}
+        plugins={[Thumbnails]}
+        // (valfritt) tryck utanför bilden stänger
+        controller={{ closeOnBackdropClick: true }}
+      />
+    </div>
+
   );
 };
 
