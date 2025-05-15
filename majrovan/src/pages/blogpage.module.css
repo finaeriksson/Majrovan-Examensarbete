@@ -1,0 +1,16 @@
+
+
+.blogContainer {
+    display: flex;
+    gap: 2rem;
+}
+
+.main {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.aside {
+    flex: 0 0 280px;
+    min-width: 220px;
+}

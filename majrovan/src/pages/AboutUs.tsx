@@ -5,7 +5,7 @@ import styles from "./aboutUs.module.css";
  function AboutUs() {
   return (
     <main className={styles.about}>
-      <Sidebar />        {/* återanvänd samma komponent */}
+      <Sidebar children={undefined} />        {/* återanvänd samma komponent */}
     </main>
   );
 }

@@ -27,32 +27,7 @@ const Blogpost: React.FC<BlogpostProps> = ({
   posts,
   activeTag,
   activeArchive
-}) => {
-  // const latestPosts = useSanityLatestPosts();  //hämtar alla inlägg
-  // const posts = useSanityLatestPosts();  
-  // const allPosts = useSanityBlogPosts();//hämtar alla inlägg
-  // console.log("Blogpost posts:", allPosts);
-
-
-  //state för filter
-  // const [activeTag, setActiveTag] = useState<string | null>(null);
-  // const [activeArcive, setActiveArcive] = useState<string | null>(null);
-
-  //filtrera baserat på tag eller arkiv
-  // const filteredPosts = allPosts.filter((post) => {
-  //   let matchesTag = true;
-  //   let matchesArchive = true;
-  //   if (activeTag) {
-  //     matchesTag = post.tags?.includes(activeTag) ?? false;
-  //   }
-  //   if (activeArcive) {
-  //     const date = new Date(post.publishedAt);
-  //     const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-  //     matchesArchive = yearMonth === activeArcive;
-  //   }
-  //   return matchesTag && matchesArchive
-  // });
-  
+}) => {  
   const filtered = posts.filter(post => {
     let ok = true
     if (activeTag) ok = post.tags?.includes(activeTag) ?? false
@@ -81,8 +56,6 @@ const Blogpost: React.FC<BlogpostProps> = ({
 
     <>
       <div className={styles.blogContainer}>
-
-
         <div className={styles.blogpost}>
           <h3>Majrovans Blogg</h3>
           {displayPosts.map(post => (
