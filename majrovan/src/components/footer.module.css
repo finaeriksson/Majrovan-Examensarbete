@@ -1,21 +1,63 @@
 
 .footer {
-    height: 100px;
+    min-height: 100px;
     width: 100%;
-    background-color: aqua;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    background: #7b5978;
+    margin: 0 auto;
+    
+
 }
 
 .followerLinks{
     display: flex;
-    width: 100;
-
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .followerLinks img {
-    width: 60px;
-    margin: 10px 0;
+    width: 50px;
+}
+.linkList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.linkList a {
+  display: block;    
+  text-decoration: none;
+  color: white;
+    justify-content: start;
+
+}
+
+/* aktiv länk */
+.linkList a.active {
+  border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 600px){
+  .footer {
+    flex-direction: column;
+  }
+  .followerLinks img{
+    width: 40px;
+    margin-bottom: 2rem;
+  }
+  .followerLinks {
+    justify-content: center;
+  }
+  .linkList {
+    justify-content: center;
+    gap: 1rem;
+  }
 }

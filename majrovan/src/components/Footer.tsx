@@ -13,8 +13,28 @@ const Footer: React.FC = () => {
         <>
         <div className={styles.footer}>
 
-            <NavLink to={'./privacyPolicy'}> Integritetspolicy</NavLink>
-            
+            <div >
+                <ul className={styles.linkList}>
+                    <li>
+                        <NavLink to="/" >Hem</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/gallery" >Köp våra produkter</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/blog" >Blogg</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/calendar" >Kalender</NavLink>
+                    </li>
+                     <li>
+                        <NavLink to="/privacyPolicy" >Integritetspolicy</NavLink>
+                    </li>
+
+                </ul>
+
+            </div>
+
 
             <div className={styles.followerLinks}>
             <img src={facebook} alt="facebookLogo" className={styles.facebookLogo}/>
