@@ -12,6 +12,7 @@ import ThankYou from './pages/ThankYou';
 import BlogPage from './pages/Blogpage';
 import MajrovanCalendar from "./components/Calendar/MajrovanCalendar";
 import AboutUs from "./pages/AboutUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 const App: React.FC = () => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
             <Route path='/blog' element={<BlogPage />} />
             <Route path='/calendar' element={<MajrovanCalendar />} />
             <Route path='/aboutUs' element={<AboutUs />} />
+            <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
           </Routes>
         </Layout>
       </CartProvider>

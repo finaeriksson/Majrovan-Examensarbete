@@ -50,11 +50,30 @@ h4 {
     background: #a1c8ea;
   }
 
+  .orderSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #7f7d7d;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e5b5d3;
+  }
+
+  .privacyPolicy a{
+    color: #333;
+  }
+
 .form {
     /* display: flex;
     flex-direction: column; */
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0;
+    padding-right: px
 }
 
 .inputForm {
@@ -66,7 +85,7 @@ h4 {
 .inputForm label {
     flex: 0 0 12px;
     margin-right: 1rem;
-    text-align: right;
+    text-align: left;
 }
 
 .inputForm input,

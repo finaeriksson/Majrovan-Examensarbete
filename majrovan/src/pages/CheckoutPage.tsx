@@ -23,12 +23,12 @@ const CheckoutPage: React.FC = () => {
     if (cart.length === 0) {
         return (
             <div className={styles.emptyCart}>
-              <p>Din korg är tom. Välj minst en produkt.</p>
-              <NavLink to="/gallery" className={styles.backButton}>
-                ← Tillbaka till galleri
-              </NavLink>
+                <p>Din korg är tom. Välj minst en produkt.</p>
+                <NavLink to="/gallery" className={styles.backButton}>
+                    ← Tillbaka till galleri
+                </NavLink>
             </div>
-          )
+        )
     }
 
     // Bygg order-strängen som skickas i mailet
@@ -40,7 +40,7 @@ const CheckoutPage: React.FC = () => {
     return (
         <>
             <div className={styles.container}>
-            <NavLink to="/gallery">Tillbaka till galleri ({cart.length})</NavLink>
+                <NavLink to="/gallery">Tillbaka till galleri ({cart.length})</NavLink>
                 <h3>Slutför din beställning</h3>
 
 
@@ -62,112 +62,120 @@ const CheckoutPage: React.FC = () => {
                     ))}
                 </ul>
 
-                <form
-                    className={styles.form}
-                    action="https://formsubmit.co/fina.eriksson@gmail.com"
-                    method="POST">
+                <div className={styles.orderSection}>
+                    <form
+                        className={styles.form}
+                        action="https://formsubmit.co/fina.eriksson@gmail.com"
+                        method="POST">
 
-                    {/* Inaktivera Formsubmit’s captcha-text */}
-                    <input type="hidden" name="_captcha" value="false" />
-                    {/* För att Formsubmit ska sätta reply-to i mailet */}
-                    <input type="hidden" name="_replyto" value={email} />
+                        {/* Inaktivera Formsubmit’s captcha-text */}
+                        <input type="hidden" name="_captcha" value="false" />
+                        {/* För att Formsubmit ska sätta reply-to i mailet */}
+                        <input type="hidden" name="_replyto" value={email} />
 
-                    {/* Visa fälten i tabell (valfritt) */}
-                    <input type="hidden" name="_template" value="table" />
+                        {/* Visa fälten i tabell (valfritt) */}
+                        <input type="hidden" name="_template" value="table" />
 
-                    {/* Skicka med hela kundkorgen som en dold fält */}
-                    <input name="order" type="hidden" value={orderText} />
+                        {/* Skicka med hela kundkorgen som en dold fält */}
+                        <input name="order" type="hidden" value={orderText} />
 
-                    {/* Skickar till egen tack sida istället för formsubmits tack sida */}
-                    <input type="hidden" name="_next" value={`${window.location.origin}/thankYou`} />
+                        {/* Skickar till egen tack sida istället för formsubmits tack sida */}
+                        <input type="hidden" name="_next" value={`${window.location.origin}/thankYou`} />
 
-                    <div className={styles.inputForm}>
-                        <label >
-                            Förnamn
-                            <input
-                                name="name"
-                                type="text"
-                                placeholder="Förnamn"
-                                required
-                            />
-                        </label>
+                        <div className={styles.inputForm}>
+                            <label >
+                                Förnamn
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder="Förnamn"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+
+                        <div className={styles.inputForm}>
+                            <label >
+                                Efternamn
+                                <input
+                                    name="lastname"
+                                    type="text"
+                                    placeholder="Efternamn"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+                        <div className={styles.inputForm}>
+                            <label >
+                                E-post
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="din@epost.se"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+                        <div className={styles.inputForm}>
+                            <label >
+                                Telefonnummer
+                                <input
+                                    name="phone"
+                                    type="phone"
+                                    placeholder="0700-12 34 56"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+                        <div className={styles.inputForm}>
+                            <label >
+                                Gatuadress
+                                <textarea
+                                    name="address"
+                                    placeholder="Din leveransadress"
+                                    required
+                                />
+                            </label>
+                        </div>
+                        <div className={styles.inputForm}>
+                            <label >
+                                Postnummer
+                                <input
+                                    name="postnumber"
+                                    placeholder="Postnummer"
+                                    required
+                                />
+                            </label>
+                        </div>
+                        <div className={styles.inputForm}>
+                            <label >
+                                Stad
+                                <input
+                                    name="city"
+                                    placeholder="Din stad"
+                                    required
+                                />
+                            </label>
+                        </div>
+
+
+
+                        <div className={styles.submitButton}>
+                            <button type="submit">Skicka beställning</button>
+                        </div>
+
+                    </form>
+
+                    <div className={styles.privacyPolicy}>
+                        <p>Genom att skicka beställningen godkänner du vår integritetspolicy</p>
+                        <NavLink to={'./privacyPolicy'}> Integritetspolicy</NavLink>
                     </div>
+                </div>
 
-
-                    <div className={styles.inputForm}>
-                        <label >
-                            Efternamn
-                            <input
-                                name="lastname"
-                                type="text"
-                                placeholder="Efternamn"
-                                required
-                            />
-                        </label>
-                    </div>
-
-                    <div className={styles.inputForm}>
-                        <label >
-                            E-post
-                            <input
-                                name="email"
-                                type="email"
-                                placeholder="din@epost.se"
-                                required
-                            />
-                        </label>
-                    </div>
-
-                    <div className={styles.inputForm}>
-                        <label >
-                            Telefonnummer
-                            <input
-                                name="phone"
-                                type="phone"
-                                placeholder="0700-12 34 56"
-                                required
-                            />
-                        </label>
-                    </div>
-
-                    <div className={styles.inputForm}>
-                        <label >
-                            Gatuadress
-                            <textarea
-                                name="address"
-                                placeholder="Din leveransadress"
-                                required
-                            />
-                        </label>
-                    </div>
-                    <div className={styles.inputForm}>
-                        <label >
-                            Postnummer
-                            <input
-                                name="postnumber"
-                                placeholder="Postnummer"
-                                required
-                            />
-                        </label>
-                    </div>
-                    <div className={styles.inputForm}>
-                        <label >
-                            Stad
-                            <input
-                                name="city"
-                                placeholder="Din stad"
-                                required
-                            />
-                        </label>
-                    </div>
-
-
-
-                    <div className={styles.submitButton}>
-                        <button type="submit">Skicka beställning</button>
-                    </div>
-
-                </form>
             </div>
         </>
 
