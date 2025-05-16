@@ -30,7 +30,7 @@ const GalleryShowcase: React.FC = () => {
 
       <SimpleBar
         className="galleryWrapper"
-        autoHide={false}
+        autoHide={true}
         style={{ maxHeight: '75vh' }}
       >
         <h3 className={styles.heading}>Galleri</h3>

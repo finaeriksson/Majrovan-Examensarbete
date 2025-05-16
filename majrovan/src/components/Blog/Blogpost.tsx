@@ -90,20 +90,10 @@ const Blogpost: React.FC<BlogpostProps> = ({
                   <PortableText value={post.body} />
                 </div>
               )}
-              </div>
-            
-
-
+              </div> 
             </div>
           ))}
         </div>
-        {/* <BlogSidebar 
-          posts={allPosts}
-          activeTag={activeTag}
-          setActiveTag={setActiveTag}
-          activeArchive={activeArcive} 
-          setActiveArchive={setActiveArcive}
-          /> */}
       </div>
     </>
   );

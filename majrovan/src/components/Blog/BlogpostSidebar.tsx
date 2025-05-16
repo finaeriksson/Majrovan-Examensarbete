@@ -1,3 +1,4 @@
+import { formatArchiveLabel } from "../../hooks/dateHelper";
 import  { BlogPost } from "../../hooks/useSanityBlogPosts"
 import styles from './blogpostSidebar.module.css'
 
@@ -33,33 +34,64 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
 
     return (
         <>
-            <div className={styles.blogSidebar}>
-              <h3>Arkiv</h3>
-              <div className={styles.archiveList}>
-                {uniqueArchives.map((archive) => (
-                    <button key={archive} className={activeArchive === archive ? styles.active : ''} onClick={() => setActiveArchive(archive)}>
-                    {archive}
-                </button>
-                ))}
+            <aside className={styles.blogSidebar} aria-labelledby="blog-sidebar">
+              <h2 id="blog-sidebar">Arkiv</h2>
+              <ul className={styles.archiveList}>
+                {uniqueArchives.map((archive) => {
+                    const isActive = activeArchive === archive;
+                    const label = formatArchiveLabel(archive);  //omvandlar "2025-02" till Februari 2025 
+
+                        return (
+                           
+                            <li key={archive}>
+                                 <a 
+                                href="#" 
+                                onClick={e => {
+                                    e.preventDefault();
+                                    setActiveArchive(archive);
+                                }}
+                                aria-current={isActive ? "true" : undefined}
+                                className={isActive ? styles.active : undefined}
+                            >
+                                {label}
+                                </a>
+                            </li>
+                        );
                 
-              </div>
+                    })}
+                
+              </ul>
               
 
-              <h3>Taggar</h3>
-              <div className={styles.tagList}>
-                {uniqueTags.map((tag) => (
-                    <button key={tag} className={activeTag === tag ? styles.active : ''} onClick={() => setActiveTag(tag)}>
-                        {tag}
-                    </button>
-                ))}
-              </div>
-
-              <button onClick={() => { setActiveTag(null); setActiveArchive(null); }}>
+              <h2>Taggar</h2>
+              <ul className={styles.tagList}>
+                {uniqueTags.map((tag) => {
+                    const isActive = activeTag === tag;
+                    return (
+                        <li key={tag}>
+                            <a 
+                            href="#"
+                            onClick={e => {                
+                                    e.preventDefault();
+                                    setActiveTag(tag);
+                            }}
+                            aria-current={isActive ? "true" : undefined}
+                            className={isActive ? styles.active : undefined}
+                            >
+                                {tag}
+                            </a>
+                        </li>
+                    );
+                })}
+              </ul>
+                <button onClick={() => { setActiveTag(null); setActiveArchive(null); }}>
                 Visa de tre senaste inläggen
               </button>
-            </div>
+              
+            </aside>   
         </>
     );
 };
 
 export default BlogSidebar
+
