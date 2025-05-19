@@ -1,5 +1,20 @@
 
+.mainContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
 
+.gallerySection{
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.sidebarContainer {
+    flex: 0 0 240px;
+}
+
+/* Knapparna */
 .checkoutButton {
     padding: 0.5rem 1rem;
     background: #4eacea;
@@ -7,15 +22,20 @@
     text-decoration: none;
     border-radius: 4px;
 }
+
 .checkoutButton:hover {
     background: #4291b4;
   }
 
-.home {
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    background: #4eacea;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
+
+
+@media (max-width: 600px) {
+    .mainContainer{
+        flex-direction: column;
+    }
+    .sidebarContainer {
+        width: 100%;
+        max-width: 420px;  
+        margin-inline: auto;
+    }
 }

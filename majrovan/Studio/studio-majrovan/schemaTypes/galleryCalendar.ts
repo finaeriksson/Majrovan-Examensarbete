@@ -1,17 +1,18 @@
 
 
-// schema för galleri
+
+// schema för galleri kalender
 
 export default {
-    name: "gallery",
-    title: "Galleri",
+    name: "galleryCalendar",
+    title: "Galleri-kalender",
     type: "document",
     fields: [
         {
             name: "title",
             type: "string",
             title: " Titel",
-            description: "Våra bilder"
+            description: "Vår kalender"
         },
         {
           name: "slug",

@@ -30,7 +30,9 @@ const Main: React.FC = () => {
             )}
             
             <div className={styles.mainContainer}>
-                <GallerySection></GallerySection>
+                <GallerySection docType="galleryCard" heading="Galleri - Kort"></GallerySection>
+                <GallerySection docType="galleryCalendar" heading="Galleri - Kalender"></GallerySection>
+
             </div>
         </div>
 

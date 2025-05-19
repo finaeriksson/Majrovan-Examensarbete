@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import CardGallery from "../components/galleryShop/CardGallery"
 import styles from "./galleryshop.module.css"
 import { useCart } from "../contexts/CartContext"
+import Sidebar from "../components/Sidebar"
 
 
 
@@ -12,18 +13,24 @@ const GalleryShop: React.FC = () => {
 
   return (
     <div>
+      <h1>Galleri</h1>
       <main className={styles.mainContainer}>
-        <h1>Galleri</h1>
-       
+
+        <div className={styles.sidebarContainer}>
+          <Sidebar>
           <NavLink to="/checkout" className={styles.checkoutButton}>
             Till kassan ({cart.length})
           </NavLink>
+          
+        </Sidebar>
+        </div>
+        
 
-          <NavLink to="/" className={styles.home}>
-            Hem
-          </NavLink>
+<div className={styles.gallerySection}>
+          <CardGallery />
+          
 
-        <CardGallery />
+</div>
       </main>
     </div>
   )

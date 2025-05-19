@@ -11,13 +11,16 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import styles from "./GallerySection.module.css";
-import '../index.css';                // <-- dina globala regler sist
+import '../index.css';               
 
 
+type Props = {
+  docType: 'galleryCard' | 'galleryCalendar';
+  heading?: string;
+};
 
-
-const GalleryShowcase: React.FC = () => {
-  const images = useSanityGalleryImages();
+const GalleryShowcase: React.FC<Props> = ({ docType, heading = 'Galleri' }) => {
+  const images = useSanityGalleryImages(docType);
 
 
   // State för att styra Lightbox
@@ -33,7 +36,7 @@ const GalleryShowcase: React.FC = () => {
         autoHide={true}
         style={{ maxHeight: '75vh' }}
       >
-        <h3 className={styles.heading}>Galleri</h3>
+        <h3 className={styles.heading}>{heading}</h3>
         <GalleryMasonry
           images={images}
           onImageClick={(idx) => {
@@ -42,9 +45,6 @@ const GalleryShowcase: React.FC = () => {
           }}
         /></SimpleBar>
 
-
-
-
       {/* Lightbox när man klickar på en bild */}
       <Lightbox
         open={isOpen}
@@ -52,7 +52,6 @@ const GalleryShowcase: React.FC = () => {
         index={currentIndex}
         slides={images.map((src) => ({ src }))}
         plugins={[Thumbnails]}
-        // (valfritt) tryck utanför bilden stänger
         controller={{ closeOnBackdropClick: true }}
       />
     </div>
