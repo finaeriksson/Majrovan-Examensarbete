@@ -12,7 +12,8 @@ interface ModalProps {
 
 return (
     <div className={style.modalPopup}>
-        <div className={style.calendarModal}> 
+        <div 
+        className={style.calendarModal}> 
             {children}
             <button onClick={onClose}>Stäng</button>
         </div>

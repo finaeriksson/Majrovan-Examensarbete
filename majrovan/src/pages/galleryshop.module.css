@@ -1,41 +1,54 @@
-
 .mainContainer {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-.gallerySection{
-    flex: 1 1 0;
-    min-width: 0;
+.gallerySection {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .sidebarContainer {
-    flex: 0 0 240px;
+  flex: 0 0 240px;
 }
 
 /* Knapparna */
 .checkoutButton {
-    padding: 0.5rem 1rem;
-    background: #4eacea;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: 10px;
+  background: #28b394;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.1rem;
+}
+.checkoutButton:active {
+  transform: scale(0.96);
 }
 
 .checkoutButton:hover {
-    background: #4291b4;
-  }
-
-
+  background-color: #1f8c71;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.checkoutButton:focus-visible,
+.checkoutButton:focus {
+  outline: 2px solid #0a5e50;
+  outline-offset: 2px;
+}
 
 @media (max-width: 600px) {
-    .mainContainer{
-        flex-direction: column;
-    }
-    .sidebarContainer {
-        width: 100%;
-        max-width: 420px;  
-        margin-inline: auto;
-    }
+  .mainContainer {
+    flex-direction: column;
+  }
+  .sidebarContainer {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+  }
 }

@@ -1,6 +1,6 @@
 // import { useState } from "react"
 import { useState } from "react"
-import { useCart } from "../contexts/CartContext"
+import { useCart } from "../hooks/useCart"
 import styles from "./checkoutPage.module.css"
 import { NavLink } from "react-router-dom"
 
@@ -51,7 +51,9 @@ const CheckoutPage: React.FC = () => {
                             <div className={styles.itemInfo}>
                                 {c.title} - {c.price} kr{""}
                             </div>
-                            <div className={styles.buttonRemove}>
+                            <div 
+                            // className={styles.buttonRemove}
+                            >
                                 <button onClick={() => dispatch({ type: "REMOVE", id: c._id })}>
                                     Ta bort
                                 </button>
@@ -65,7 +67,7 @@ const CheckoutPage: React.FC = () => {
                 <div className={styles.orderSection}>
                     <form
                         className={styles.form}
-                        action="https://formsubmit.co/fina.eriksson@gmail.com"
+                        action={`https://formsubmit.co/${import.meta.env.VITE_FORMSUBMIT_EMAIL}`}
                         method="POST">
 
                         {/* Inaktivera Formsubmit’s captcha-text */}
@@ -164,13 +166,17 @@ const CheckoutPage: React.FC = () => {
 
 
 
-                        <div className={styles.submitButton}>
+                        <div 
+                        // className={styles.submitButton}
+                        >
                             <button type="submit">Skicka beställning</button>
                         </div>
 
                     </form>
 
-                    <div className={styles.privacyPolicy}>
+                    <div 
+                    // className={styles.privacyPolicy}
+                    >
                         <p>Genom att skicka beställningen godkänner du vår integritetspolicy</p>
                         <NavLink to={'./privacyPolicy'}> Integritetspolicy</NavLink>
                     </div>

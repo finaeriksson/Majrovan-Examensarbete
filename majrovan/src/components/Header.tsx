@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
                 <div className={styles.overlay}>
                     <h1>Majrovan</h1>
-                    <h3>Odlingstips direkt från grönsakslandet</h3>
+                    <h2>Odlingstips direkt från grönsakslandet</h2>
                 </div>
 
 

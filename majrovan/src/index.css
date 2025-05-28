@@ -1,3 +1,4 @@
+
 html,
 body,
 #root {
@@ -6,6 +7,40 @@ body,
     width: 100%;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+/* globala styles för knappar */
+button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: 10px;
+  background: #28B394;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform .1s;
+  letter-spacing: 0.1rem;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:hover {
+  background-color: #1F8C71;
+    text-transform: uppercase;
+  text-decoration: underline;
+}
+
+button:focus-visible,
+button:focus {
+  outline: 2px solid #0A5E50;
+  outline-offset: 2px;
 }
 
 
@@ -51,3 +86,16 @@ body,
 .simplebar-scrollbar:before{
   background: #916f9a !important; /* mörkare vid hover */
 } 
+
+/* sr = screen reader only */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

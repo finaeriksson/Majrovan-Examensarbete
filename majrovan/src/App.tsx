@@ -6,13 +6,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout';
 import Main from './pages/Main'
 import GalleryShop from './pages/GalleryShop'
-import { CartProvider } from './contexts/CartContext';
+import { CartProvider } from './contexts/CartProvider';
 import CheckoutPage from './pages/CheckoutPage';
 import ThankYou from './pages/ThankYou';
 import BlogPage from './pages/Blogpage';
 import MajrovanCalendar from "./components/Calendar/MajrovanCalendar";
 import AboutUs from "./pages/AboutUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+// import './index.css';
+
+
+
 
 
 const App: React.FC = () => {

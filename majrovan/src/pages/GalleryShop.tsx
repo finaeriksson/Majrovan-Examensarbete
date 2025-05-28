@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom"
 import CardGallery from "../components/galleryShop/CardGallery"
 import styles from "./galleryshop.module.css"
-import { useCart } from "../contexts/CartContext"
+import { useCart } from "../hooks/useCart"
 import Sidebar from "../components/Sidebar"
 
 
@@ -13,24 +13,34 @@ const GalleryShop: React.FC = () => {
 
   return (
     <div>
-      <h1>Galleri</h1>
+      <h1>Köp våra produkter</h1>
       <main className={styles.mainContainer}>
 
-        <div className={styles.sidebarContainer}>
+        <aside className={styles.sidebarContainer}>
           <Sidebar>
-          <NavLink to="/checkout" className={styles.checkoutButton}>
-            Till kassan ({cart.length})
-          </NavLink>
-          
-        </Sidebar>
-        </div>
-        
+            <NavLink to="/checkout"
+              className={styles.checkoutButton}
+              aria-label="Gå till kassan"
+            >
+              Till kassan {" "}
+              <span
+                aria-live="polite"
+                aria-atomic="true"
+                className="sr-only">
+                Det finns nu ({cart.length}) artiklar i varukorgen
+              </span>
+              ({cart.length})
+            </NavLink>
 
-<div className={styles.gallerySection}>
+          </Sidebar>
+        </aside>
+
+
+        <section className={styles.gallerySection}>
           <CardGallery />
-          
 
-</div>
+
+        </section>
       </main>
     </div>
   )

@@ -11,7 +11,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import styles from "./GallerySection.module.css";
-import '../index.css';               
+// import '../index.css';               
 
 
 type Props = {

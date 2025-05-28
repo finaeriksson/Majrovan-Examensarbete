@@ -16,7 +16,7 @@ interface BlogPost {
     tags?: string[];  //? gör fältet valfritt
     title: string;
     slug: { current: string };
-    body: any;
+    body: unknown;
     publishedAt: string;
   }
 

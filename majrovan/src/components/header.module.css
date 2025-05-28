@@ -85,13 +85,11 @@ h3 {
   text-decoration: underline;
 }
 .stickyMenu .inactiveLink {
-  color: #f7e5ff;
   text-decoration: none;
   opacity: 0.8;
 }
 
 .stickyMenu .activeLink {
-  color: #f5f5f5;
   text-decoration: underline;
   text-transform: uppercase;
   font-weight: bold;
