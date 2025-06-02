@@ -15,22 +15,25 @@ const CheckoutPage: React.FC = () => {
     const [email, setEmail] = useState("")
 
 
+     // Antal varor totalt:
+  const totalItems = cart.reduce((sum, ci) => sum + ci.quantity, 0);
 
-    if (cart.length === 0) {
-        return (
-            <div className={styles.emptyCart}>
-                <p>Din korg är tom. Välj minst en produkt.</p>
-                <NavLink to="/gallery" className={styles.backButton}>
-                    ← Tillbaka till galleri
-                </NavLink>
-            </div>
-        )
-    }
 
-    // Bygg order-strängen som skickas i mailet
-    const orderText = cart
-        .map(c => `${c.title} — ${c.price} kr`)
-        .join("\n")
+    if (totalItems === 0) {
+    return (
+      <div className={styles.emptyCart}>
+        <p>Din korg är tom. Välj minst en produkt.</p>
+        <NavLink to="/gallery" className={styles.backButton}>
+          ← Tillbaka till galleri
+        </NavLink>
+      </div>
+    );
+  }
+
+    // Bygg en sträng att skicka i mailet (kan ändras efter behov):
+  const orderText = cart
+    .map(ci => `${ci.item.title} (×${ci.quantity}) — ${ci.item.price} kr st`)
+    .join("\n");
 
 
     return (
@@ -41,23 +44,52 @@ const CheckoutPage: React.FC = () => {
 
 
                 <ul className={styles.cartList}>
-                    <h4>Kundvagn</h4>
-                    {cart.map(c => (
-                        <li key={c._id} className={styles.cartItem}>
-                            <div className={styles.itemInfo}>
-                                {c.title} - {c.price} kr{""}
-                            </div>
-                            <div 
-                            >
-                                <button onClick={() => dispatch({ type: "REMOVE", id: c._id })}>
-                                    Ta bort
-                                </button>
-                            </div>
+        <h4>Kundvagn</h4>
+        {cart.map(ci => (
+          <li key={ci.item._id} className={styles.cartItem}>
+            {/* Produkttitel + pris */}
+            <div className={styles.itemInfo}>
+              <span className={styles.itemTitle}>{ci.item.title}</span>
+              <span className={styles.itemPrice}>{ci.item.price} kr</span>
+            </div>
 
+            {/* Plus/minus och qty */}
+            <div className={styles.quantityControls}>
+              <button
+                type="button"
+                className={styles.adjustButton}
+                onClick={() =>
+                  dispatch({ type: "REMOVE_ONE", id: ci.item._id })
+                }
+                aria-label={`Minska antal av ${ci.item.title}`}
+              >
+                −
+              </button>
+              <span className={styles.quantityText}>{ci.quantity}</span>
+              <button
+                type="button"
+                className={styles.adjustButton}
+                onClick={() => dispatch({ type: "ADD", card: ci.item })}
+                aria-label={`Öka antal av ${ci.item.title}`}
+              >
+                +
+              </button>
+            </div>
 
-                        </li>
-                    ))}
-                </ul>
+            {/* Valfri ”Ta bort alla exemplar”‐knapp */}
+            <button
+              type="button"
+              className={styles.removeAllButton}
+              onClick={() =>
+                dispatch({ type: "REMOVE_ALL", id: ci.item._id })
+              }
+              aria-label={`Ta bort alla av ${ci.item.title}`}
+            >
+              Ta bort alla
+            </button>
+          </li>
+        ))}
+      </ul>
 
                 <div className={styles.orderSection}>
                     <form

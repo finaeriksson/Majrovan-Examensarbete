@@ -1,18 +1,21 @@
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../lib/sanityClient';
 import styles from './cardGallery.module.css';
-import useSanityCards from '../../hooks/useSanityCards'
+import useSanityCards, { CardData } from '../../hooks/useSanityCards'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
 
+interface CardGalleryProps {
+  onAddToCart: (card: CardData) => void;
+}
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }
 
-const CardGallery: React.FC = () => {
+const CardGallery: React.FC <CardGalleryProps> = ({ onAddToCart }) => {
   const cards = useSanityCards();
-  const { dispatch } = useCart()
+  // const { dispatch } = useCart()
 
   return (
     <>
@@ -36,7 +39,7 @@ const CardGallery: React.FC = () => {
 
             <button 
               // className={styles.buyButton}
-              onClick={() => dispatch({ type: "ADD", card})}
+              onClick={() => onAddToCart(card)}
               aria-label={`Köp ${card.title} för ${card.price} kronor`}> 
               Köp 
             </button>
