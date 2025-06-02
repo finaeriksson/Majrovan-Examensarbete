@@ -13,10 +13,6 @@ import BlogPage from './pages/Blogpage';
 import MajrovanCalendar from "./components/Calendar/MajrovanCalendar";
 import AboutUs from "./pages/AboutUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-// import './index.css';
-
-
-
 
 
 const App: React.FC = () => {

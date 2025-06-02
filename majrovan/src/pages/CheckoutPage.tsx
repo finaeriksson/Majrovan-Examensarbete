@@ -11,14 +11,10 @@ const CheckoutPage: React.FC = () => {
 
 
     const { cart, dispatch } = useCart()
-    // const [name, setName] = useState("")
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [email, setEmail] = useState("")
-    // const [address, setAddress] = useState("")
 
-    // const handleSubmit = (e: React.FormEvent) => {
 
-    // }
 
     if (cart.length === 0) {
         return (
@@ -52,7 +48,6 @@ const CheckoutPage: React.FC = () => {
                                 {c.title} - {c.price} kr{""}
                             </div>
                             <div 
-                            // className={styles.buttonRemove}
                             >
                                 <button onClick={() => dispatch({ type: "REMOVE", id: c._id })}>
                                     Ta bort

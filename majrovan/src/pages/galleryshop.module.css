@@ -42,6 +42,12 @@
   outline-offset: 2px;
 }
 
+.cartList {
+  border: 1px solid black;
+  list-style: none;
+  
+}
+
 @media (max-width: 600px) {
   .mainContainer {
     flex-direction: column;

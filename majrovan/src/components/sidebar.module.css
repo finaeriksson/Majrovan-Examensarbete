@@ -3,26 +3,24 @@
 .sidebarContainer {
     height: 100%;    
     box-sizing: border-box;
-
     padding: 1rem;
-    background: #f6eada;
+    background: #D8AFC5;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: .75rem;
-}
-
-.sidebarContainer img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .sidebarContainer p {
     margin: 0;
     line-height: 1.45;
     text-align: justify;
+}
+
+.content {
+  border-radius: 6px;
+  padding: 0.75rem
 }
 
   

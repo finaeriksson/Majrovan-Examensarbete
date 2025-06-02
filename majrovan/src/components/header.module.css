@@ -1,8 +1,8 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-}
+} */
 
 .body {
   margin: 0;
@@ -85,8 +85,9 @@ h3 {
   text-decoration: underline;
 }
 .stickyMenu .inactiveLink {
+  color: #fff;
   text-decoration: none;
-  opacity: 0.8;
+  
 }
 
 .stickyMenu .activeLink {

@@ -45,6 +45,11 @@
   border-bottom: 2px solid #fff;
 }
 
+.copyright {
+  color: white;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 600px){
   .footer {
     flex-direction: column;

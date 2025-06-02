@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     return (
         
         <div className={styles.sidebarContainer}>
-            <div className={styles.presentation}>
+            <div className={styles.content}>
                 {children}
             </div>
         </div>       
