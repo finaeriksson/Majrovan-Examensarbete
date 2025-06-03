@@ -123,3 +123,26 @@ h4 {
   .backButton:hover {
     background: #4291b4;
   }
+
+  
+/* Tillägg för <select> eller andra inmatningstyper */
+.inputForm select:focus,
+.inputForm input[type="text"]:focus,
+.inputForm input[type="email"]:focus,
+.inputForm input[type="number"]:focus,
+.inputForm textarea:focus {
+  outline: 3px solid #2274d6;
+  outline-offset: 2px;
+}
+
+/* Knapp-fokus (alla knappar i cartItem, submitButton, backButton etc.) */
+button:focus {
+  outline: 3px solid #2274d6;
+  outline-offset: 2px;
+}
+
+.backButton:focus-visible,
+.backButton:focus {
+  outline: 3px solid #2274d6;   /* Exempel på en blå, 3px kant */
+  outline-offset: 2px;          /* Ligger 2px utanför elementets kant */
+}

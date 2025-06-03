@@ -1,7 +1,7 @@
 // src/contexts/CartProvider.tsx
 import React, { useReducer, ReactNode } from "react";
 import { CartContext, CartAction, CartItem } from "./CartContext";
-import type { CardData } from "../hooks/useSanityCards";
+// import type { CardData } from "../hooks/useSanityCards";
 
 //
 // 1) Reducer-funktionen: hur vi uppdaterar cart‐state beroende på vilken action vi skickar.
