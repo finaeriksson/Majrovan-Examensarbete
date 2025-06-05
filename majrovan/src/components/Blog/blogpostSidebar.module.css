@@ -1,9 +1,12 @@
 
 /* blogSidebar.module.css */
 .blogSidebar {
-    background-color: #fafafa;
+    background-color: #D8AFC5;
     padding: 1rem;
-    border-left: 1px solid #ccc;
+  }
+
+  .sidebareHeadline {
+    color: #3b0d30;
   }
   
   .archiveList {
@@ -16,9 +19,6 @@
     transition: color 0.2s;
   }
   
-  .archiveList li:hover {
-    color: #0070f3;
-  }
   .archiveList,
   .tagList {
     display: flex;
@@ -35,7 +35,7 @@
     border: 1px solid #666;
     border-radius: 4px;
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: .875rem;
   }
   .archiveList a[aria-current="true"],

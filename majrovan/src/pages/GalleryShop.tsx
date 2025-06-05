@@ -32,7 +32,7 @@ const GalleryShop: React.FC = () => {
               {/* Länk till kassan, visar antal totalt i varukorgen */}
               <NavLink
                 to="/checkout"
-                className="btn"
+                className="btn light-focus"
                 aria-label="Gå till kassan"
               >
                 Till kassan ({totalItems})

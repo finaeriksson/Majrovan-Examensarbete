@@ -1,8 +1,3 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-} */
 
 .body {
   margin: 0;
@@ -31,14 +26,14 @@ h1 {
   padding: 20px;
 }
 
-.navImage {
+/* .navImage {
   position: absolute;
   top: 20px;
   left: 20px;
   width: 40px;
   height: auto;
   cursor: pointer;
-}
+} */
 
 .burger {
   background: none;
@@ -53,6 +48,7 @@ h1 {
   align-items: center;
   color: #fff;
 }
+
 
 .stickyMenu {
   display: flex;
@@ -80,13 +76,24 @@ h1 {
 .stickyMenu .inactiveLink {
   color: #fff;
   text-decoration: none;
-  
+  outline: none;
+}
+.inactiveLink:hover,
+.inactiveLink:focus-visible {
+  text-decoration: underline;
 }
 
 .stickyMenu .activeLink {
   text-decoration: underline;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+/* Fokus‐stilar – väldigt viktiga för keyboard‐navigering */
+.inactiveLink:focus-visible,
+.activeLink:focus-visible {
+  outline: 3px solid #ffffff; /* vit kant runt länk när den är fokuserad */
+  outline-offset: 3px;
 }
 
 .linkList {

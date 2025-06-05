@@ -10,7 +10,7 @@ body,
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     box-sizing: border-box;
-    background-color: #f4f0f0;
+    background-color:   #e9e1e1;
 }
 
 /* globala styles för knappar */
@@ -51,6 +51,14 @@ button:focus,
   outline-offset: 2px;
 }
 
+.light-focus:focus {
+  outline: none; /* se till att vi inte får vanlig (oönskad) outline */
+}
+
+.light-focus:focus-visible {
+  outline: 3px solid #3b0d30;  /* till exempel klarblå, hög kontrast mot vitt/ljus bakgrund */
+  outline-offset: 3px;
+}
 
 /* globala styles för glleri lightboxen */
 :root {

@@ -18,7 +18,7 @@ const CheckoutPage: React.FC = () => {
         return (
             <div className={styles.emptyCart}>
                 <p>Din korg är tom. Välj minst en produkt.</p>
-                <NavLink to="/gallery" className={styles.backButton}>
+                <NavLink to="/gallery" className="btn light-focus">
                     ← Tillbaka till galleri
                 </NavLink>
             </div>

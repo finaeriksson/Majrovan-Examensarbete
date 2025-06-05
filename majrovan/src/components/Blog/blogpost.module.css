@@ -2,7 +2,6 @@
 .blogContainer {
     display: flex;
     gap: 2rem;
-    /* border: 1px solid red; */
 }
 
 .blogpost {

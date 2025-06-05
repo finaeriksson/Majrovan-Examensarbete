@@ -27,7 +27,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* desktop menu */}
-            <nav className={styles.stickyMenu}>
+            <nav className={styles.stickyMenu} aria-label="Huvudnavigering">
 
                 {/* hamburger menu */}
                 <button

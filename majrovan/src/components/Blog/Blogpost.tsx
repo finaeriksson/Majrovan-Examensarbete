@@ -57,7 +57,7 @@ const Blogpost: React.FC<BlogpostProps> = ({
     <>
       <div className={styles.blogContainer}>
         <div className={styles.blogpost}>
-          <h3>Majrovans Blogg</h3>
+          <h1>Majrovans Blogg</h1>
           {displayPosts.map(post => (
             <div key={post._id}>
               <div className={styles.blogHeading}>

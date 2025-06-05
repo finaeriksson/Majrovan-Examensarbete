@@ -28,7 +28,7 @@
 }
 
 .mobileMenuContent a:focus-visible {
-  outline: 3px solid #2274d6;    /* Blå fokusmarkör mot vit bakgrund */
+  outline: 3px solid white;    /* Blå fokusmarkör mot vit bakgrund */
   outline-offset: 2px;
 }
 

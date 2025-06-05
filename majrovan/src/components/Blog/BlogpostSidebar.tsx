@@ -35,7 +35,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
     return (
         <>
             <aside className={styles.blogSidebar} aria-labelledby="blog-sidebar">
-              <h2 id="blog-sidebar">Arkiv</h2>
+              <h2 id="blog-sidebar-arkiv" className={styles.sidebareHeadline} >Arkiv</h2>
               <ul className={styles.archiveList}>
                 {uniqueArchives.map((archive) => {
                     const isActive = activeArchive === archive;
@@ -51,7 +51,8 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
                                     setActiveArchive(archive);
                                 }}
                                 aria-current={isActive ? "true" : undefined}
-                                className={isActive ? styles.active : undefined}
+                                className={`btn ${isActive ? styles.active : ""}`}
+
                             >
                                 {label}
                                 </a>
@@ -63,7 +64,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
               </ul>
               
 
-              <h2>Taggar</h2>
+              <h2 id="blog-sidebar-taggar" className={styles.sidebareHeadline}>Taggar</h2>
               <ul className={styles.tagList}>
                 {uniqueTags.map((tag) => {
                     const isActive = activeTag === tag;
@@ -76,7 +77,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
                                     setActiveTag(tag);
                             }}
                             aria-current={isActive ? "true" : undefined}
-                            className={isActive ? styles.active : undefined}
+                            className={`btn ${isActive ? styles.active : ""}`}
                             >
                                 {tag}
                             </a>

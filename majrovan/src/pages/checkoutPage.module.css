@@ -131,18 +131,17 @@ h4 {
 .inputForm input[type="email"]:focus,
 .inputForm input[type="number"]:focus,
 .inputForm textarea:focus {
-  outline: 3px solid #2274d6;
+  outline: 3px solid #fff;
   outline-offset: 2px;
 }
 
-/* Knapp-fokus (alla knappar i cartItem, submitButton, backButton etc.) */
-button:focus {
-  outline: 3px solid #2274d6;
+/* .btn:focus {
+  outline: 3px solid #3b0d30;
   outline-offset: 2px;
 }
 
-.backButton:focus-visible,
-.backButton:focus {
-  outline: 3px solid #2274d6;   /* Exempel på en blå, 3px kant */
-  outline-offset: 2px;          /* Ligger 2px utanför elementets kant */
-}
+.btn:focus-visible,
+.btn:focus {
+  outline: 3px solid #3b0d30;   
+  outline-offset: 2px;      
+} */
