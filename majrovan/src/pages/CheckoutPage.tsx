@@ -1,5 +1,3 @@
-// import { useState } from "react"
-import { useState } from "react"
 import { useCart } from "../hooks/useCart"
 import styles from "./checkoutPage.module.css"
 import { NavLink } from "react-router-dom"

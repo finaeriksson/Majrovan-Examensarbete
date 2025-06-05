@@ -13,7 +13,7 @@ function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }
 
-const CardGallery: React.FC <CardGalleryProps> = ({ onAddToCart }) => {
+const CardGallery: React.FC<CardGalleryProps> = ({ onAddToCart }) => {
   const cards = useSanityCards();
   // const { dispatch } = useCart()
 
@@ -26,22 +26,21 @@ const CardGallery: React.FC <CardGalleryProps> = ({ onAddToCart }) => {
               <img
                 src={urlFor(card.image).width(400).quality(80).url()}
                 srcSet={`
-    ${urlFor(card.image).width(400).quality(80).url()} 400w,
-    ${urlFor(card.image).width(800).quality(80).url()} 800w
-  `}
-  sizes="(max-width: 600px) 100vw, 400px"
-  width={400}
-  style={{ height: 'auto' }}
+                  ${urlFor(card.image).width(400).quality(80).url()} 400w,
+                  ${urlFor(card.image).width(800).quality(80).url()} 800w
+                  `}
+                sizes="(max-width: 600px) 100vw, 400px"
+                width={400}
+                style={{ height: 'auto' }}
                 alt={card.title} />
             )}
-            <h3>{card.title}</h3>
+            <h2>{card.title}</h2>
             <p>{card.price} kr</p>
 
-            <button 
-              // className={styles.buyButton}
+            <button
               onClick={() => onAddToCart(card)}
-              aria-label={`Köp ${card.title} för ${card.price} kronor`}> 
-              Köp 
+              aria-label={`Köp ${card.title} för ${card.price} kronor`}>
+              Köp
             </button>
           </div>
         ))}

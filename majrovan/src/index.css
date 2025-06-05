@@ -10,36 +10,44 @@ body,
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     box-sizing: border-box;
+    background-color: #f4f0f0;
 }
 
 /* globala styles för knappar */
-button {
+button,
+.btn {
   font-family: inherit;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.4rem 1.25rem;
-  border-radius: 10px;
-  background: #1fb292;
-  color: white;
+  font-size: 0.9rem;                /* Lagom knapptypsnitt */
+  padding: 0.5rem 1.25rem;          /* Tillräcklig klickyta */
+  border-radius: 8px;               /* Rundade hörn */
+  background-color: #7f5f85;        /* Mörk lila (samma som nav‐bar) */
+  color: #ffffff;                   /* Vit text för hög kontrast */
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform .1s;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-button:active {
+button:active,
+.btn:active {
   transform: scale(0.96);
 }
 
-button:hover {
-  background-color: #1F8C71;
+button:hover,
+.btn:hover {
+  background-color: #93608c;        /* Något ljusare/lugnare lila */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     text-transform: uppercase;
   text-decoration: underline;
 }
 
 button:focus-visible,
-button:focus {
-  outline: 2px solid #0A5E50;
+button:focus,
+.btn:focus-visible,
+.btn:focus {
+  outline: 3px solid #fff;
   outline-offset: 2px;
 }
 

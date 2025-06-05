@@ -46,10 +46,9 @@
 }
 
 aside button {
-  margin-top: 20px;
-  padding: 5px;
-  border-radius: 8px;
-  border: 1px solid #666;
-  color: #333;
+padding: 5px;
+gap: 1rem;
 }
+
+
 

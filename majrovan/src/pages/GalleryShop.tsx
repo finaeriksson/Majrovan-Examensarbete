@@ -32,7 +32,7 @@ const GalleryShop: React.FC = () => {
               {/* Länk till kassan, visar antal totalt i varukorgen */}
               <NavLink
                 to="/checkout"
-                className={styles.checkoutButton}
+                className="btn"
                 aria-label="Gå till kassan"
               >
                 Till kassan ({totalItems})
@@ -95,7 +95,7 @@ const GalleryShop: React.FC = () => {
                       {/* Valfri ta bort-alla-knapp */}
                       <button
                         type="button"
-                        className={styles.removeAllButton}
+                        className={styles.removeAll}
                         onClick={() =>
                           dispatch({
                             type: "REMOVE_ALL",

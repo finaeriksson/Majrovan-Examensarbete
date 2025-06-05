@@ -3,14 +3,17 @@
 .cardContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    /* padding: 1rem; */
+      background-color: #f7e6e6;
+  border: 1px solid black;
+  border-radius: 10px;
   }
   
   .card {
     border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
+    margin: 5px;
+    border-radius: 10px;
   }
   
   .card img {
