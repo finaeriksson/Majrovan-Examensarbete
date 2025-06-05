@@ -1,32 +1,26 @@
 
 
-/* MobileMenu.tsx – ett enkelt overlay */
-
 import { NavLink } from 'react-router-dom';
 import styles from './mobileMenu.module.css';
 
 
 interface MobileMenuProps {
-  open: boolean;
-  onClose: () => void;     // exakt vilken signatur du vill ha
+  onClose: () => void;    
 }
 
-export default function MobileMenu({ open, onClose }: MobileMenuProps) {
-  if (!open) return null;
+export default function MobileMenu({ onClose }: MobileMenuProps) {
 
   return (
-    <div className={styles.backdrop} onClick={onClose}>
       <nav
         id="mobile-menu"
-        className={styles.drawer}
+        className={styles.mobileMenuContent}
         onClick={e => e.stopPropagation()}
       >
-        <NavLink to="/"        onClick={onClose}>Hem</NavLink>
-        <NavLink to="/gallery" onClick={onClose}>Galleri</NavLink>
-        <NavLink to="/blog"    onClick={onClose}>Blogg</NavLink>
-        <NavLink to="/calendar"onClick={onClose}>Kalender</NavLink>
-        <NavLink to="/aboutUs"  onClick={onClose}>Om oss</NavLink>
+        <NavLink to="/" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Hem</NavLink>
+        <NavLink to="/gallery" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Galleri</NavLink>
+        <NavLink to="/blog"    onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Blogg</NavLink>
+        <NavLink to="/calendar" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Kalender</NavLink>
+        <NavLink to="/aboutUs"  onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Om oss</NavLink>
       </nav>
-    </div>
   );
 }

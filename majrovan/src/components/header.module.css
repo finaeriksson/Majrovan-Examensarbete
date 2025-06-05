@@ -54,10 +54,6 @@ h1 {
   color: #fff;
 }
 
-.burger:hover {
-  color: #ffd770;
-}
-
 .stickyMenu {
   display: flex;
   align-items: center;

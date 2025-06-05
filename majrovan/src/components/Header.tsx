@@ -1,9 +1,10 @@
 
 import { NavLink } from "react-router-dom";
-import bukett2 from "../images/bukett2.jpg";
+import bukett2 from "../images/bukett2.webp";
 import styles from "./header.module.css";
 import { useState } from "react";
 import MobileMenu from "../pages/MobileMenu";
+import MobileDrawer from "./MobileDrawer";
 
 
 const Header: React.FC = () => {
@@ -30,16 +31,18 @@ const Header: React.FC = () => {
 
                 {/* hamburger menu */}
                 <button
+                    type="button"
                     className={styles.burger}
-                    aria-label="Öppna menyn"
+                    aria-label={open ? "Stäng meny" : "Öppna meny"}
                     aria-expanded={open}
                     aria-controls="mobile-menu"
                     onClick={() => setOpen(true)}
                 >
                     ☰
                 </button>
-
-                <MobileMenu open={open} onClose={() => setOpen(false)} />
+                <MobileDrawer open={open} onClose={() => setOpen(false)}>
+                    <MobileMenu onClose={() => setOpen(false)} />
+                </MobileDrawer>
 
 
                 <ul className={styles.linkList}>

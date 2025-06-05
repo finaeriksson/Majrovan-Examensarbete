@@ -6,7 +6,7 @@
   z-index: 1400;
   display: flex;
 }
-.drawer {
+.mobileMenuContent {
   position: fixed; 
   left: 0; 
   top: 0;
@@ -20,6 +20,16 @@
   animation: slide .3s ease forwards;
   z-index: 1401;
   transform: translateX(0);
+}
+
+
+.mobileMenuContent a:hover {
+  color: #fff;                /* Accent‐färg på hover */
+}
+
+.mobileMenuContent a:focus-visible {
+  outline: 3px solid #2274d6;    /* Blå fokusmarkör mot vit bakgrund */
+  outline-offset: 2px;
 }
 
 
