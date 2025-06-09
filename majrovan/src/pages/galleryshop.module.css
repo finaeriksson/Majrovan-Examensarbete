@@ -16,8 +16,8 @@
 .cartItemInfo {
   display: flex;
   flex-direction: row;
-  align-items: center;        /* centrerar vertikalt ifall de har olika textstorlek */
-  gap: 1rem;                 /* 8px mellan rum mellan titel och pris */
+  align-items: center;        
+  gap: 1rem;               
   margin-bottom: 1rem;
 }
 
@@ -41,50 +41,10 @@
 padding-top: 1rem;
 }
 
-/* ====== KONTAINERN FÖR PLUS / MINUS OCH ANTAL ====== */
 .quantityControls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;               /* Avstånd mellan minus‐knapp, text och plus‐knapp */
-}
-
-/* ====== JUSTERAKNAPP (− och +) ====== */
-.adjustButton {
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 1rem;            
-  line-height: 1;             
-  width: 1.5rem;                
-  height: 1.5rem;
-  border-radius: 6px;          
-  padding: 0;                  /* Ingen extra padding – texten (symbolen) är centrerad tack vare width/height */
-  box-sizing: border-box;
-  /* Kantlinje */
-  border: 2px solid transparent; /* Tjockare transparent kant för att slippa “hoppa” vid focus */
-  outline: none;
-  /* Hover / fokus / aktiv */
-  cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.removeAll {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.adjustButton:hover {
-  background-color: #93608c;  /* Något ljusare lila på hover */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-}
-
-.adjustButton:active {
-  transform: scale(0.95);     /* Ger en liten “tryck in”-känsla */
-}
-
-.adjustButton:focus-visible,
-.adjustButton:focus {
-  outline: 3px solid #ffffff; 
-  outline-offset: 2px;
+  gap: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -96,4 +56,8 @@ padding-top: 1rem;
     max-width: 420px;
     margin-inline: auto;
   }
+}
+
+.removeAll{
+  margin-top: 1rem;
 }

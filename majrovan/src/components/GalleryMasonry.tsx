@@ -8,16 +8,23 @@ interface GalleryMasonryProps {
 
 const GalleryMasonry: React.FC <GalleryMasonryProps> = ({ images, onImageClick }) => {
 
+    
 
     return(
+        
         <div className={styles.masonry}>
             {images.map((src, i) => (
-                <div key={i} className={styles.item} onClick={() =>onImageClick?.(i)}>
-                    <img src={src} alt={`Bild ${i+1}`}className={styles.image} />
-                    <div className={styles.overlay}>
-                        <span className={styles.icon}>🔍</span>
-                    </div>
-                </div>
+                <button 
+                    key={i} 
+                    type="button"
+                    className={styles.item} 
+                    onClick={() =>onImageClick?.(i)}
+                    aria-label={`Öppna bild nummer ${i + 1}`}>
+                        <img src={src} alt={`Bild ${i+1}`}className={styles.image} />
+                        <div className={styles.overlay}>
+                            <span className={styles.icon}>🔍</span>
+                        </div>
+                </button>
             ))}
         </div>
     )

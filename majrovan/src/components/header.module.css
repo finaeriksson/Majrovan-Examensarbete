@@ -26,15 +26,6 @@ h1 {
   padding: 20px;
 }
 
-/* .navImage {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: auto;
-  cursor: pointer;
-} */
-
 .burger {
   background: none;
   border: none;
@@ -48,7 +39,6 @@ h1 {
   align-items: center;
   color: #fff;
 }
-
 
 .stickyMenu {
   display: flex;
@@ -67,6 +57,7 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.1rem;
+  padding: 0.6rem;
 }
 .stickyMenu a:hover {
   opacity: 0.8;

@@ -3,7 +3,13 @@
 .masonry {
     column-count: 4;      
   column-gap: 1rem;
- column-count: 230px; 
+ padding: 1rem;
+}
+
+/* Nollställ om SimpleBar wrappern ändå av någon anledning fick fokus */
+.masonry:focus,
+.masonry:focus-visible {
+  outline: none;
 }
 
   /* tablet */
@@ -24,13 +30,28 @@
   } }
 
 .item {
-    position: relative;
-    display: inline-block;
-    /* width: 100%; */
-    margin-bottom: 1rem;
-    cursor: pointer;
-    overflow: hidden;
-    /* break-inside: avoid; */
+    /* Gör knappen “osynlig” som knapp och återskapa div-utseendet */
+  padding: 0;
+  margin: 0 0 1rem 0;    /* margin-bottom: 1rem; */
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  display: inline-block;  /* Viktigt för CSS Columns! */
+  width: 100%;            /* Så att varje .item får fullt “kolumn-bredd” */
+
+  /* Det viktiga för att behålla masonry: */
+  break-inside: avoid;    /* Se till att elementet inte delas upp över två kolumner */
+  position: relative;     /* För att din overlay-positionering ska funka */
+  overflow: hidden;       /* Döljer allting som sticker ut */
+
+  /* Återskapa kantlinje, bakgrund etc. (precis som tidigare) */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.2s ease; /* om du vill ha hovrings-animation */
 }
 
 .image {
@@ -63,6 +84,13 @@
     transform: scale(1.05);
 }
 
-.item:hover .overlay {
-    opacity: 1;
+.item:hover .overlay,
+.item:focus .overlay {
+  opacity: 1;
+}
+
+/* 6) Tydlig fokusram när knappen är i tangentbordsfokus */
+.item:focus-visible {
+  outline: 3px solid #4a2636;  /* samma mörklila som du använder i menyn */
+  outline-offset: 4px;         /* ger lite luft mellan knapp och ram */
 }

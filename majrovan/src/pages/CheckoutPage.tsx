@@ -34,12 +34,12 @@ const CheckoutPage: React.FC = () => {
     return (
         <>
             <div className={styles.container}>
-                <NavLink to="/gallery" className={styles.backButton}>Tillbaka till galleri ({cart.length})</NavLink>
-                <h3>Slutför din beställning</h3>
+                <NavLink to="/gallery" className="btn light-focus">Tillbaka till galleri ({cart.length})</NavLink>
+                <h2 className={styles.completeOrder}>Slutför din beställning</h2>
 
 
                 <ul className={styles.cartList}>
-                    <h4>Kundvagn</h4>
+                    <h3>Kundvagn</h3>
                     {cart.map(ci => (
                         <li key={ci.item._id} className={styles.cartItem}>
                             {/* Produkttitel + pris */}
@@ -52,7 +52,7 @@ const CheckoutPage: React.FC = () => {
                             <div className={styles.quantityControls}>
                                 <button
                                     type="button"
-                                    className={styles.adjustButton}
+                                    className={`${styles.adjustButton} btn light-focus`}
                                     onClick={() =>
                                         dispatch({ type: "REMOVE_ONE", id: ci.item._id })
                                     }
@@ -63,7 +63,7 @@ const CheckoutPage: React.FC = () => {
                                 <span className={styles.quantityText}>{ci.quantity}</span>
                                 <button
                                     type="button"
-                                    className={styles.adjustButton}
+                                    className={`${styles.adjustButton} btn light-focus`}
                                     onClick={() => dispatch({ type: "ADD", card: ci.item })}
                                     aria-label={`Öka antal av ${ci.item.title}`}
                                 >
@@ -74,7 +74,7 @@ const CheckoutPage: React.FC = () => {
                             {/* Valfri ”Ta bort alla exemplar”‐knapp */}
                             <button
                                 type="button"
-                                className={styles.removeAllButton}
+                                className={`${styles.removeAllButton} btn light-focus`}
                                 onClick={() =>
                                     dispatch({ type: "REMOVE_ALL", id: ci.item._id })
                                 }
@@ -198,7 +198,7 @@ const CheckoutPage: React.FC = () => {
                         </div>
 
                         <div>
-                            <button type="submit">Skicka beställning</button>
+                            <button type="submit" className="btn light-focus">Skicka beställning</button>
                         </div>
 
                     </form>
@@ -206,7 +206,7 @@ const CheckoutPage: React.FC = () => {
                     <div
                     >
                         <p>Genom att skicka beställningen godkänner du vår integritetspolicy</p>
-                        <NavLink to="/privacyPolicy" >Integritetspolicy</NavLink>
+                        <NavLink to="/privacyPolicy" className="btn light-focus" >Integritetspolicy</NavLink>
                     </div>
                 </div>
 

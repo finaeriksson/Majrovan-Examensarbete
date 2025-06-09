@@ -16,10 +16,13 @@ body,
 /* globala styles för knappar */
 button,
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: inherit;
   font-weight: 600;
-  font-size: 0.9rem;                /* Lagom knapptypsnitt */
-  padding: 0.5rem 1.25rem;          /* Tillräcklig klickyta */
+  font-size: 0.9rem;              
+  padding: 0.5rem 1.25rem;         
   border-radius: 8px;               /* Rundade hörn */
   background-color: #7f5f85;        /* Mörk lila (samma som nav‐bar) */
   color: #ffffff;                   /* Vit text för hög kontrast */
@@ -28,11 +31,18 @@ button,
   letter-spacing: 0.05rem;
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 44px;
+  min-height: 44px;
 }
+/* .btn.light-focus {
+ min-width: 44px;
+  min-height: 44px; 
+} */
 
 button:active,
 .btn:active {
   transform: scale(0.96);
+  
 }
 
 button:hover,
@@ -41,12 +51,14 @@ button:hover,
   box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     text-transform: uppercase;
   text-decoration: underline;
+
 }
 
 button:focus-visible,
 button:focus,
 .btn:focus-visible,
-.btn:focus {
+.btn:focus,
+.footerLinks:focus {
   outline: 3px solid #fff;
   outline-offset: 2px;
 }
@@ -58,6 +70,10 @@ button:focus,
 .light-focus:focus-visible {
   outline: 3px solid #3b0d30;  /* till exempel klarblå, hög kontrast mot vitt/ljus bakgrund */
   outline-offset: 3px;
+}
+
+.footerLinks {
+  padding: 0.5rem;
 }
 
 /* globala styles för glleri lightboxen */

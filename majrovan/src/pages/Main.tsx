@@ -16,7 +16,7 @@ const Main: React.FC = () => {
             {isDesktop && (
                 <aside className={styles.aside}>
                 <Sidebar>
-                    <img src={presentation} alt="Presentationsbild" />
+                    <img src={presentation} alt="Presentationsbild av Majrovans skapare" />
                     <p>Vi har funderat lite på om vi som gör Majrovans borde presentera oss? Här får ni därför en gammal 
                     bild från när våra liv till stor del innebar loppisar och bilutflykter, ångesthantering och jakten 
                     på den perfekta vågen. En kan säga att vi möttes i Malmös aktivistkretsar för en sisådär 10-12 år sen 

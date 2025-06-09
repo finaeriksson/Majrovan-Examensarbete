@@ -20,6 +20,8 @@
     margin-bottom: 2rem;
 }
 
+
+
 .followerLinks img {
     width: 50px;
 }
@@ -32,18 +34,26 @@
   margin-top: 2rem;
 }
 
+
 .linkList a {
   display: block;    
   text-decoration: none;
   color: white;
     justify-content: start;
+      text-decoration: none;
 
 }
+.linkList a:hover {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
 
-/* aktiv länk */
+
+
+/* aktiv länk
 .linkList a.active {
   border-bottom: 2px solid #fff;
-}
+} */
 
 .copyright {
   color: white;

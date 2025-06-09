@@ -57,11 +57,11 @@ const Blogpost: React.FC<BlogpostProps> = ({
     <>
       <div className={styles.blogContainer}>
         <div className={styles.blogpost}>
-          <h1>Majrovans Blogg</h1>
+          <h3 className={styles.heading}>Majrovans Blogg</h3>
           {displayPosts.map(post => (
             <div key={post._id}>
-              <div className={styles.blogHeading}>
-                <h2>{post.title}</h2>
+              <div >
+                <h4 className={styles.blogpostHeading}>{post.title}</h4>
 
               {/* Taggar */}
               <div  className={styles.tag}>
