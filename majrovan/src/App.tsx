@@ -1,7 +1,6 @@
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import "./index.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout';
 import Main from './pages/Main'

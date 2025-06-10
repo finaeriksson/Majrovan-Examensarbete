@@ -51,7 +51,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
                                     setActiveArchive(archive);
                                 }}
                                 aria-current={isActive ? "true" : undefined}
-                                className={`btn ${isActive ? styles.active : ""}`}
+                                className={`btn light-focus ${isActive ? styles.active : ""}`}
 
                             >
                                 {label}
@@ -77,7 +77,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
                                     setActiveTag(tag);
                             }}
                             aria-current={isActive ? "true" : undefined}
-                            className={`btn ${isActive ? styles.active : ""}`}
+                            className={`btn light-focus ${isActive ? styles.active : ""}`}
                             >
                                 {tag}
                             </a>
@@ -85,7 +85,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
                     );
                 })}
               </ul>
-                <button onClick={() => { setActiveTag(null); setActiveArchive(null); }}>
+                <button className="btn light-focus" onClick={() => { setActiveTag(null); setActiveArchive(null); }}>
                 Visa de tre senaste inläggen
               </button>
               

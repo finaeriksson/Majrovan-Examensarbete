@@ -64,7 +64,7 @@ const GalleryShop: React.FC = () => {
                       <div className={styles.quantityControls}>
                         <button
                           type="button"
-                          className={styles.adjustButton}
+                          className={`${styles.adjustButton} btn light-focus`}
                           onClick={() =>
                             dispatch({
                               type: "REMOVE_ONE",
@@ -82,7 +82,7 @@ const GalleryShop: React.FC = () => {
 
                         <button
                           type="button"
-                          className={styles.adjustButton}
+                          className={`${styles.adjustButton} btn light-focus`}
                           onClick={() =>
                             dispatch({ type: "ADD", card: ci.item })
                           }
@@ -95,7 +95,7 @@ const GalleryShop: React.FC = () => {
                       {/* Valfri ta bort-alla-knapp */}
                       <button
                         type="button"
-                        className={styles.removeAll}
+                        className={`${styles.removeAll} btn light-focus`}
                         onClick={() =>
                           dispatch({
                             type: "REMOVE_ALL",

@@ -36,7 +36,7 @@ const CardGallery: React.FC<CardGalleryProps> = ({ onAddToCart }) => {
             <p>{card.price} kr</p>
 
             <button
-              className="light-focus"
+              className="btn light-focus"
               onClick={() => onAddToCart(card)}
               aria-label={`Köp ${card.title} för ${card.price} kronor`}>
               Köp

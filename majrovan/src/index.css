@@ -14,7 +14,7 @@ body,
 }
 
 /* globala styles för knappar */
-button,
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -75,7 +75,26 @@ button:focus,
 .footerLinks {
   padding: 0.5rem;
 }
+/* toolbar‐knapparna */
+.rbc-toolbar button:focus,
+.rbc-toolbar button:focus-visible {
+  outline: 3px solid #3b0d30;
+  outline-offset: 2px;
+}
 
+/* alla datum‐celler i month‐view */
+.rbc-month-view .rbc-date-cell:focus,
+.rbc-month-view .rbc-date-cell:focus-visible {
+  outline: 3px solid #3b0d30 !important;
+  outline-offset: 2px;
+}
+
+/* även om du skulle ha other‐views */
+.rbc-day-bg:focus,
+.rbc-day-bg:focus-visible {
+  outline: 3px solid #3b0d30 !important;
+  outline-offset: 2px;
+}
 /* globala styles för glleri lightboxen */
 :root {
     --yarl-overlay-bg: rgba(0, 0, 0, 0.9);
@@ -131,3 +150,4 @@ button:focus,
   white-space: nowrap !important;
   border: 0 !important;
 }
+

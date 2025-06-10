@@ -15,7 +15,7 @@ return (
         <div 
         className={style.calendarModal}> 
             {children}
-            <button onClick={onClose}>Stäng</button>
+            <button className="btn" onClick={onClose}>Stäng</button>
         </div>
     </div>
 );

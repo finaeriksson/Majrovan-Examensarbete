@@ -14,5 +14,33 @@
     background-color: #9a7697;
 }
 
-    /* width: 100%; */
-    /* max-width: 400px; */
+
+/* Om du kör CSS-moduler, slå in dem i :global */
+
+/* :global(.rbc-toolbar button:focus),
+:global(.rbc-toolbar button:focus-visible) {
+  outline: 3px solid #3b0d30;
+  outline-offset: 2px;
+} */
+/* 
+:global(.rbc-date-cell:focus),
+:global(.rbc-date-cell:focus-visible) {
+  outline: 3px solid #3b0d30 !important;
+  outline-offset: 2px;
+} */
+    
+/* toolbar-knapparna får ring */
+/* :global(.rbc-toolbar button:focus),
+:global(.rbc-toolbar button:focus-visible) {
+  outline: 3px solid #3b0d30;
+  outline-offset: 2px;
+} */
+
+/* månadsvy: justera datum-cellerna */
+/* :global(.rbc-month-view .rbc-date-cell[tabindex="0"]:focus),
+:global(.rbc-month-view .rbc-date-cell[tabindex="0"]:focus-visible) { */
+  /* ta bort ev. user-agent-outline */
+  /* outline: none; */
+  /* använd box-shadow för tydlig ring */
+  /* box-shadow: inset 0 0 0 3px #3b0d30;
+} */

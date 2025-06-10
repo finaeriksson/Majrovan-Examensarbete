@@ -1,14 +1,14 @@
 
 import moment from 'moment';
 import 'moment/locale/sv';
-import { Calendar, momentLocalizer, SlotInfo, Event } from 'react-big-calendar';
+import { Calendar, DateCellWrapperProps, momentLocalizer, SlotInfo, Event } from 'react-big-calendar';
 import style from './majrovanCalender.module.css'
 import  useSanityEvents from '../../hooks/useSanityEvents'; // Importera din custom hook
 import Modal from "././Modal";
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useEffect, useState } from 'react';
 
-
+ 
 moment.locale('sv');
 
 const localizer = momentLocalizer(moment);
@@ -39,6 +39,36 @@ const MajrovanCalendar = () => {
       setIsModalOpen(true);
     }
   
+    // Wrapper‐komponent:
+const DateCellWrapper: React.ComponentType<DateCellWrapperProps> = ({
+    value,
+    children,
+    ...restProps
+  }) => (
+    <div
+      // Gör den tabb‐fokusbar
+      tabIndex={0}
+      role="button"
+      aria-label={`Öppna event för ${value
+        .toISOString()
+        .slice(0, 10)}`}
+      onClick={() =>
+        handleSelectSlot({ start: value, end: value, slots: [], action: "click" })
+      }
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleSelectSlot({ start: value, end: value, slots: [], action: "click" });
+        }
+      }}
+      // Här sprider vi ut allt annat — framför allt className
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
+
+
     // Hantera klick på både datum och eventrubrik
   useEffect(() => {
     const handleDateOrEventClick = (event: MouseEvent) => {
@@ -74,16 +104,20 @@ const MajrovanCalendar = () => {
     return (
 
       <div className={style.calendar} >
-        <Calendar
+        <Calendar 
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
         selectable
+        views={{ month: true }}
         onSelectSlot={handleSelectSlot} // gör tom yta klickbar
         onSelectEvent={handleSelectEvent} //går att klicka på eventrubriken
         longPressThreshold={10} // Förbättrar responsivitet
-        views={{ month: true, week: false, day: false, agenda: false }} //Blockerar dag, vecka, agenda-vy
+        components={{
+    dateCellWrapper: DateCellWrapper
+  }}
+        // views={{ month: true, week: false, day: false, agenda: false }} //Blockerar dag, vecka, agenda-vy
       />
 
       {isModalOpen && (
