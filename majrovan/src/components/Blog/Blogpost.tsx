@@ -27,75 +27,86 @@ const Blogpost: React.FC<BlogpostProps> = ({
   posts,
   activeTag,
   activeArchive
-}) => {  
+}) => {
   const filtered = posts.filter(post => {
     let ok = true
     if (activeTag) ok = post.tags?.includes(activeTag) ?? false
     if (activeArchive) {
       const date = new Date(post.publishedAt)
-      const ym = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}`
+      const ym = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`
       ok = ok && ym === activeArchive
     }
     return ok
   })
 
 
-  const sortedPosts = [...filtered].sort((a,b) => {
+  const sortedPosts = [...filtered].sort((a, b) => {
     return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
   });
 
 
   //inga filter? visa tre senaste
-  const displayPosts = 
-  !activeTag && !activeArchive 
-    ? sortedPosts.slice(0, 3)  //endast tre senaste
-    : sortedPosts;                // alla som matchar filter
+  const displayPosts =
+    !activeTag && !activeArchive
+      ? sortedPosts.slice(0, 3)  //endast tre senaste
+      : sortedPosts;                // alla som matchar filter
 
 
   return (
+    <div className={styles.blogContainer}>
+      <div className={styles.blogpost}>
+        <h3 className={styles.heading}>Majrovans Blogg</h3>
+        {displayPosts.map(post => (
+          <article key={post._id} className={styles.post}>
+            {/* 0) Rubrik och meta LIGGER UTANFÖR grid */}
+            <h4 className={styles.blogpostHeading}>{post.title}</h4>
 
-    <>
-      <div className={styles.blogContainer}>
-        <div className={styles.blogpost}>
-          <h3 className={styles.heading}>Majrovans Blogg</h3>
-          {displayPosts.map(post => (
-            <div key={post._id}>
-              <div >
-                <h4 className={styles.blogpostHeading}>{post.title}</h4>
-
-              {/* Taggar */}
-              <div  className={styles.tag}>
-                {post.tags?.map((tag, i) => (
-                <span key={i}>{tag}</span>
-              ))}
-              <span>Publicerad: {' '} {new Date(post.publishedAt).toLocaleDateString()}</span>
-              </div>
-              
-              </div>
-              <div className={styles.blogItem}>
-                {/* visar bilder från galleriet */}
-              {post.gallery && post.gallery.length > 0 && (
-                <Carousel className={styles.carousel} showThumbs={false} autoPlay infiniteLoop>
-                  {post.gallery.map((img) => (
-                    <div key={img._key}>
-                      <img src={urlFor(img).width(200).quality(80).dpr(2).url()} alt="Bild från galleriet" />
-                    </div>
-                  ))}
-                </Carousel>
-              )}
-
-              {/* visar blogginläggets text med PortableText */}
-              {post.body && (
+            {/* 1.) Mediadelen */}
+            <div className={styles.postGrid}
+            > {post.gallery && post.gallery.length > 0 && (
+              <Carousel
+                className={styles.carousel}
+                showThumbs={false}
+                autoPlay
+                infiniteLoop
+              >
+                {post.gallery.map(img => (
+                  <div key={img._key}>
+                    <img
+                      src={urlFor(img).width(400).url()}
+                      alt={post.title}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            )}
+              {/* 2.) Textdelen */}
+              <div className={styles.text}>
                 <div className={styles.blogtext}>
                   <PortableText value={post.body} />
                 </div>
-              )}
-              </div> 
+
+                {/* 3) Metainformation *under* texten */}
+                <div className={styles.meta}>
+                  {post.tags?.map((tag, i) => (
+                    <span key={i} className={styles.tag}>#{tag}</span>
+                  ))}
+                  <time className={styles.date}>
+                    Publicerad: {new Date(post.publishedAt).toLocaleDateString()}
+                  </time>
+                </div>
+
+              </div>
+
             </div>
-          ))}
-        </div>
+
+
+          </article>
+        ))}
       </div>
-    </>
+
+    </div >
+
   );
 };
 

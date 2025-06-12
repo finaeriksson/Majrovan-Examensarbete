@@ -1,3 +1,4 @@
+/* blogpage.module.css */
 
 
 .blogContainer {
@@ -5,6 +6,10 @@
     gap: 2rem;
 }
 
+.aside {
+    flex: 0 0 280px;
+    min-width: 220px;
+}
 .main {
     flex: 1 1 0;
     min-width: 0;
@@ -12,5 +17,17 @@
 
 .aside {
     flex: 0 0 280px;
-    min-width: 220px;
+    min-width: 200px;
+}
+
+/* När sidan är smalare än 900px, stapla sidebar ovanpå .main */
+@media (max-width: 500px) {
+  .blogContainer {
+    flex-direction: column;
+  }
+  .aside,
+  .main {
+    width: 100%;
+    max-width: none;
+  }
 }

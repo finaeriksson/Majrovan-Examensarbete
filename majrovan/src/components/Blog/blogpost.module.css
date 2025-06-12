@@ -1,53 +1,60 @@
-.blogContainer {
-  display: flex;
+/* blogpost.module.css */
+
+.postGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
-}
-
-.blogpost {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  clear: both;
-  margin: 1rem 0;
-  margin: 0 auto;
-}
-.heading {
-  font-size: 3rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-.blogpostHeading {
-  display: flex;
-  flex-direction: column;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.blogItem {
-  display: flex;
-}
-
-.tag {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-}
-.carousel {
-  display: flex;
-  max-width: 60%;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 2rem auto;
   align-items: center;
 }
 
-.blogtext {
-  display: flex;
+.text {
+  text-align: center;
+  padding: 0 1rem;
+    line-height: 1.6;
+  text-align: center;
   border: 1px solid black;
-  width: 60%;
-  margin: 0 auto;
 }
 
-.blogSidebar {
+@media (max-width: 600px) {
+  .postGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blogpost {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.blogpostHeading {
+  font-size: 2rem;
+    text-align: center;
+  margin: 1rem auto;
+}
+
+.tag {
   display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* på riktigt smala skärmar staplas bild + text */
+@media (max-width: 900px) {
+  .postGrid {
+    grid-template-columns: 1fr;
+  }
 }

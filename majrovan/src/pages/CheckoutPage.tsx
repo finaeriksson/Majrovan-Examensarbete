@@ -30,6 +30,10 @@ const CheckoutPage: React.FC = () => {
         .map(ci => `${ci.item.title} (×${ci.quantity}) — ${ci.item.price} kr st`)
         .join("\n");
 
+    const totalPrice = cart.reduce(
+        (sum, ci) => sum + ci.quantity * ci.item.price,
+        0
+    );
 
     return (
         <>
@@ -69,6 +73,7 @@ const CheckoutPage: React.FC = () => {
                                 >
                                     +
                                 </button>
+
                             </div>
 
                             {/* Valfri ”Ta bort alla exemplar”‐knapp */}
@@ -83,7 +88,12 @@ const CheckoutPage: React.FC = () => {
                                 Ta bort alla
                             </button>
                         </li>
+
+                        
                     ))}
+                    <p className={styles.totalPrice}>
+                        <strong>Totalt:</strong> {totalPrice} kr
+                    </p>
                 </ul>
 
                 <div className={styles.orderSection}>
@@ -196,6 +206,14 @@ const CheckoutPage: React.FC = () => {
                             <label htmlFor="company">Företag (lämna tomt)</label>
                             <input id="company" name="company" type="text" autoComplete="off" tabIndex={-1} />
                         </div>
+
+                        {/* Skicka med totalen både som dolt fält i mailet och som query param vid redirect */}
+                        <input type="hidden" name="total" value={totalPrice} />
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value={`${window.location.origin}/thankYou?total=${totalPrice}`}
+                        />
 
                         <div>
                             <button type="submit" className="btn light-focus">Skicka beställning</button>
