@@ -3,16 +3,16 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout';
-import Main from './pages/Main'
-import GalleryShop from './pages/GalleryShop'
 import { CartProvider } from './contexts/CartProvider';
-import CheckoutPage from './pages/CheckoutPage';
-import ThankYou from './pages/ThankYou';
-import BlogPage from './pages/Blogpage';
-import MajrovanCalendar from "./components/Calendar/MajrovanCalendar";
-import AboutUs from "./pages/AboutUs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-
+import { lazy, Suspense } from "react";
+const Main           = lazy(() => import('./pages/Main'))
+const GalleryShop    = lazy(() => import('./pages/GalleryShop'))
+const CheckoutPage   = lazy(() => import('./pages/CheckoutPage'))
+const ThankYou       = lazy(() => import('./pages/ThankYou'))
+const BlogPage       = lazy(() => import('./pages/Blogpage'))
+const MajrovanCalendar = lazy(() => import('./components/Calendar/MajrovanCalendar'))
+const AboutUs        = lazy(() => import('./pages/AboutUs'))
+const PrivacyPolicy  = lazy(() => import('./pages/PrivacyPolicy'))
 
 const App: React.FC = () => {
 
@@ -22,6 +22,7 @@ const App: React.FC = () => {
       <BrowserRouter>
       <CartProvider>
          <Layout>
+          <Suspense fallback={<div>Laddar…</div>}>
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/gallery' element={<GalleryShop />} />
@@ -32,6 +33,7 @@ const App: React.FC = () => {
             <Route path='/aboutUs' element={<AboutUs />} />
             <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
           </Routes>
+          </Suspense>
         </Layout>
       </CartProvider>
        
