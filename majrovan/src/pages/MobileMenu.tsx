@@ -17,7 +17,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
         onClick={e => e.stopPropagation()}
       >
         <NavLink to="/" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Hem</NavLink>
-        <NavLink to="/gallery" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Galleri</NavLink>
+        <NavLink to="/gallery" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Köp våra produkter</NavLink>
         <NavLink to="/blog"    onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Blogg</NavLink>
         <NavLink to="/calendar" onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Kalender</NavLink>
         <NavLink to="/aboutUs"  onClick={onClose} className={({ isActive }) => (isActive ? styles.active : "")}>Om oss</NavLink>
