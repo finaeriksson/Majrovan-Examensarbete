@@ -114,6 +114,7 @@ const CheckoutPage: React.FC = () => {
                         {/* Skickar till egen tack sida istället för formsubmits tack sida */}
                         <input type="hidden" name="_next" value={`${window.location.origin}/thankYou`} />
 
+                        {/* value="https://gentle-queijadas-d8e04a.netlify.app/thank-you" */}
                         <div className={styles.inputForm}>
                             <label htmlFor="name">
                                 Förnamn <span aria-hidden="true">*</span>
@@ -221,7 +222,7 @@ const CheckoutPage: React.FC = () => {
 
                     </form>
 
-                    <div
+                    <div className={styles.integrity}
                     >
                         <p>Genom att skicka beställningen godkänner du vår integritetspolicy</p>
                         <NavLink to="/privacyPolicy" className="btn light-focus" >Integritetspolicy</NavLink>

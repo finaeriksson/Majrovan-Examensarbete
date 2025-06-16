@@ -130,3 +130,27 @@
   margin: 1rem 0;
   text-align: right;
 }
+
+/* --- Lägg till längst ner i checkoutPage.module.css --- */
+
+@media (max-width: 768px) {
+  .orderSection {
+    /* Byt från rad (desktop) till kolumn (mobil) */
+    flex-direction: column;
+    align-items: stretch;      /* Se till att barnen får full bredd */
+    gap: 1.5rem;               /* Lite luft mellan form och policy */
+  }
+
+  .orderSection :global(.form) {
+    /* Ge formuläret full bredd på mobil */
+    width: 100%;
+  }
+
+  .integrity {
+    /* Låt integritetspolicyn följa efter formuläret och få full bredd */
+    order: 2;                  /* Säkerställer att den hamnar sist */
+    width: 100%;
+    text-align: center;        /* Valfritt: centrera texten/knappen */
+    margin-top: 1rem;
+  }
+}
