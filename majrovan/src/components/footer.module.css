@@ -48,13 +48,6 @@
   text-decoration: underline;
 }
 
-
-
-/* aktiv länk
-.linkList a.active {
-  border-bottom: 2px solid #fff;
-} */
-
 .copyright {
   color: white;
   letter-spacing: 1px;
@@ -74,5 +67,11 @@
   .linkList {
     justify-content: center;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .linkList a {
+    font-size: 0.875rem;   
   }
 }
