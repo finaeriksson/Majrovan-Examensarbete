@@ -1,4 +1,4 @@
-
+/* 
 .body {
   margin: 0;
   padding: 0;
@@ -80,10 +80,9 @@ h1 {
   font-weight: bold;
 }
 
-/* Fokus‐stilar – väldigt viktiga för keyboard‐navigering */
 .inactiveLink:focus-visible,
 .activeLink:focus-visible {
-  outline: 3px solid #ffffff; /* vit kant runt länk när den är fokuserad */
+  outline: 3px solid #ffffff;
   outline-offset: 3px;
 }
 
@@ -100,23 +99,153 @@ h1 {
   text-decoration: none;
 }
 
-/* aktiv länk */
 .linkList a.active {
   border-bottom: 2px solid #fff;
 }
 
 @media (max-width: 768px) {
-  /* visa hamburger */
   .burger {
     display: flex;
     margin-right: auto;
   }
-  /* göm vanliga länkarna */
   .linkList {
     display: none;
   }
   .stickyMenu {
     background: #7b5978;
+    gap: 0;
+    padding: 0.25rem 0.5rem;
+  }
+} */
+
+/* Header.module.css */
+
+/* Om du vill påverka body globalt */
+:global(body) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero-sektionen */
+.header {
+  position: relative;         /* för overlay och för att kunna reservera höjd */
+  width: 100%;                /* undvik 100vw om du inte vill ha horisontell scroll */
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Lägg på background-image antingen här: */
+/* (förutsätter att Webpack/Vite kan lösa url-importer i CSS) */
+.header {
+  background-image: url('../images/bukett2.webp');
+}
+
+/* Overlay-lagret ovanpå bilden */
+.overlay {
+  position: absolute;
+  inset: 0;                   /* top/right/bottom/left: 0 */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Rubriker inuti overlay */
+.overlay h1 {
+  font-size: 4.2em;
+  line-height: 1.1;
+  margin: 0;
+}
+.overlay h2 {
+  margin: 0.5em 0 0;
+}
+
+/* Sticky navigeringsmeny */
+.stickyMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: #7b5978;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Lista av länkar */
+.linkList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkList a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 0.6rem;
+}
+
+.linkList a:hover {
+  opacity: 0.8;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* Inaktiva/aktiva länkar */
+.inactiveLink,
+.activeLink {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.activeLink {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.inactiveLink:hover,
+.inactiveLink:focus-visible,
+.activeLink:focus-visible {
+  text-decoration: underline;
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Hamburger-knapp (gömd desktop, synlig mobil) */
+.burger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  align-items: center;
+  color: #fff;
+
+  /* göm på desktop */
+  display: none;
+}
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    margin-right: auto;
+  }
+  .linkList {
+    display: none;
+  }
+  .stickyMenu {
     gap: 0;
     padding: 0.25rem 0.5rem;
   }

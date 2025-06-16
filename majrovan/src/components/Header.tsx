@@ -16,7 +16,8 @@ const Header: React.FC = () => {
         <>
             <div
                 className={styles.header}
-                style={{ backgroundImage: ` url(${bukett2})` }}>
+                // style={{ backgroundImage: ` url(${bukett2})` }}
+                >
 
                 <div className={styles.overlay}>
                     <h1>Majrovan</h1>
