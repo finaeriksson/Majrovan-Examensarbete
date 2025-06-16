@@ -9,9 +9,7 @@
     padding: 10px 0;
     background: #7b5978;
     margin: 0 auto;
-    
-
-}
+  }
 
 .followerLinks{
     display: flex;
@@ -19,8 +17,6 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-
-
 
 .followerLinks img {
     width: 50px;
@@ -71,7 +67,12 @@
 }
 
 @media (max-width: 480px) {
+  .linkList {
+    flex-direction: column;
+    align-items: center;
+  }
   .linkList a {
-    font-size: 0.875rem;   
+    width: 100%;
+    text-align: center;
   }
 }
