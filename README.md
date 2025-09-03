@@ -10,5 +10,5 @@ with beutifull illustrations. The webpage is intended to create a way for majrov
 - Created using headless CMS Sanity
 
 
-🚀 [Live Demo på Netlify]
+🚀 Live Demo på Netlify
 https://majrovan.netlify.app/
