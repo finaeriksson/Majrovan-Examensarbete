@@ -8,3 +8,7 @@ with beutifull illustrations. The webpage is intended to create a way for majrov
 # Technical information
 - React and TypeScript
 - Created using headless CMS Sanity
+
+
+# Netlify link
+https://majrovan.netlify.app/
